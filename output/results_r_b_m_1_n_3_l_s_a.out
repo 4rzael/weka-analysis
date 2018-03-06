@@ -1,0 +1,127 @@
+
+Options: -R -B -M 1 -N 3 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (5.0)
+|   normalized-losses > 98.0: -2 (2.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (7.56/1.0)
+|   |   height > 51.6
+|   |   |   make = saab: 2 (2.0)
+|   |   |   make != saab
+|   |   |   |   make = audi
+|   |   |   |   |   wheel-base <= 102.7: 2 (1.0)
+|   |   |   |   |   wheel-base > 102.7: 1 (3.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = volkswagen
+|   |   |   |   |   |   wheel-base <= 98.8: 2 (3.0)
+|   |   |   |   |   |   wheel-base > 98.8: 0 (2.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   horsepower <= 69.0
+|   |   |   |   |   |   |   |   curb-weight <= 2145.0: 1 (5.0)
+|   |   |   |   |   |   |   |   curb-weight > 2145.0: 0 (3.16)
+|   |   |   |   |   |   |   horsepower > 69.0
+|   |   |   |   |   |   |   |   make = plymouth: -1 (1.0)
+|   |   |   |   |   |   |   |   make != plymouth
+|   |   |   |   |   |   |   |   |   make = toyota
+|   |   |   |   |   |   |   |   |   |   width <= 65.4: 0 (4.0)
+|   |   |   |   |   |   |   |   |   |   width > 65.4: -1 (5.0)
+|   |   |   |   |   |   |   |   |   make != toyota: 0 (32.84)
+|   num-of-doors != four
+|   |   body-style = convertible: 3 (5.0)
+|   |   body-style != convertible
+|   |   |   height <= 50.2: 3 (10.0/1.0)
+|   |   |   height > 50.2
+|   |   |   |   make = saab: 3 (2.0)
+|   |   |   |   make != saab
+|   |   |   |   |   engine-location = front
+|   |   |   |   |   |   num-of-cylinders = six
+|   |   |   |   |   |   |   make = alfa-romero: 1 (1.0)
+|   |   |   |   |   |   |   make != alfa-romero
+|   |   |   |   |   |   |   |   make = bmw: 0 (1.0)
+|   |   |   |   |   |   |   |   make != bmw: 3 (1.0)
+|   |   |   |   |   |   num-of-cylinders != six
+|   |   |   |   |   |   |   make = audi: 0 (2.0/1.0)
+|   |   |   |   |   |   |   make != audi
+|   |   |   |   |   |   |   |   make = subaru: 2 (2.0)
+|   |   |   |   |   |   |   |   make != subaru
+|   |   |   |   |   |   |   |   |   stroke <= 3.47
+|   |   |   |   |   |   |   |   |   |   make = bmw: 2 (1.0)
+|   |   |   |   |   |   |   |   |   |   make != bmw
+|   |   |   |   |   |   |   |   |   |   |   make = volkswagen: 2 (1.0)
+|   |   |   |   |   |   |   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   |   |   |   |   |   |   engine-type = l: 2 (1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   engine-type != l
+|   |   |   |   |   |   |   |   |   |   |   |   |   fuel-system = spfi: 2 (1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   fuel-system != spfi
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wheel-base <= 89.5: 2 (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   make = mitsubishi: 2 (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   make != mitsubishi: 1 (18.44)
+|   |   |   |   |   |   |   |   |   stroke > 3.47
+|   |   |   |   |   |   |   |   |   |   normalized-losses <= 119.0: 0 (1.0)
+|   |   |   |   |   |   |   |   |   |   normalized-losses > 119.0: 2 (4.0)
+|   |   |   |   |   engine-location != front: 3 (1.0)
+
+Number of Leaves  : 	33
+
+Size of the tree : 	65
+
+
+Time taken to build model: 0.26 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         192               93.6585 %
+Incorrectly Classified Instances        13                6.3415 %
+Kappa statistic                          0.9174
+Mean absolute error                      0.1292
+Root mean squared error                  0.2132
+Relative absolute error                 58.4835 %
+Root relative squared error             64.2733 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 19  2  1  0  0 |  c = -1
+  0  0  0 65  1  0  1 |  d = 0
+  0  0  0  2 50  1  1 |  e = 1
+  0  0  0  1  1 29  1 |  f = 2
+  0  0  0  0  0  1 26 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         138               67.3171 %
+Incorrectly Classified Instances        67               32.6829 %
+Kappa statistic                          0.5714
+Mean absolute error                      0.1655
+Root mean squared error                  0.2803
+Relative absolute error                 74.8562 %
+Root relative squared error             84.4432 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 15  6  1  0  0 |  c = -1
+  0  0  1 52  5  3  6 |  d = 0
+  0  0  1  7 38  2  6 |  e = 1
+  0  0  0  6 13 12  1 |  f = 2
+  0  0  1  1  3  4 18 |  g = 3
+

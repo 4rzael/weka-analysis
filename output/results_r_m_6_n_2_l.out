@@ -1,0 +1,75 @@
+
+Options: -R -M 6 -N 2 -L 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   curb-weight <= 2050: 1 (9.0/2.0)
+|   |   curb-weight > 2050
+|   |   |   height <= 55.6: 0 (18.0/2.0)
+|   |   |   height > 55.6: 2 (7.0/2.0)
+|   wheel-base > 101.2
+|   |   compression-ratio <= 8.4: 0 (13.0/3.0)
+|   |   compression-ratio > 8.4: -1 (12.0/2.0)
+num-of-doors = two
+|   city-mpg <= 22: 3 (17.0/5.0)
+|   city-mpg > 22: 1 (27.0/13.0)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	13
+
+
+Time taken to build model: 0.14 seconds
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         136               66.3415 %
+Incorrectly Classified Instances        69               33.6585 %
+Kappa statistic                          0.5627
+Mean absolute error                      0.1273
+Root mean squared error                  0.264 
+Relative absolute error                 57.6083 %
+Root relative squared error             79.5655 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  2  1  0  0  0 |  b = -2
+  0  0 19  3  0  0  0 |  c = -1
+  0  0  6 46  6  4  5 |  d = 0
+  0  0  3  6 40  0  5 |  e = 1
+  0  0  0  2 21  8  1 |  f = 2
+  0  0  0  0  4  0 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         133               64.878  %
+Incorrectly Classified Instances        72               35.122  %
+Kappa statistic                          0.5433
+Mean absolute error                      0.1251
+Root mean squared error                  0.2684
+Relative absolute error                 56.5637 %
+Root relative squared error             80.8751 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  2  1  0  0  0 |  b = -2
+  0  0 16  4  2  0  0 |  c = -1
+  0  0  7 50  4  1  5 |  d = 0
+  0  0  4  4 36  5  5 |  e = 1
+  0  0  0  9 11 10  2 |  f = 2
+  0  0  1  0  3  2 21 |  g = 3
+

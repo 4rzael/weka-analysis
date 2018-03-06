@@ -1,0 +1,131 @@
+
+Options: -B -C 0.20 -M 1 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (8.0)
+|   normalized-losses > 98.0: -2 (3.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (10.54/1.0)
+|   |   height > 51.6
+|   |   |   make = saab: 2 (3.0)
+|   |   |   make != saab
+|   |   |   |   make = audi
+|   |   |   |   |   length <= 184.6: 2 (2.0)
+|   |   |   |   |   length > 184.6: 1 (3.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = volkswagen
+|   |   |   |   |   |   wheel-base <= 98.8: 2 (5.0)
+|   |   |   |   |   |   wheel-base > 98.8: 0 (3.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   curb-weight <= 2050.0
+|   |   |   |   |   |   |   horsepower <= 69.0: 1 (7.0)
+|   |   |   |   |   |   |   horsepower > 69.0: 0 (4.0)
+|   |   |   |   |   |   curb-weight > 2050.0
+|   |   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   |   normalized-losses <= 74.0
+|   |   |   |   |   |   |   |   |   drive-wheels = fwd: -1 (6.19/0.19)
+|   |   |   |   |   |   |   |   |   drive-wheels != fwd: 0 (1.59/0.37)
+|   |   |   |   |   |   |   |   normalized-losses > 74.0
+|   |   |   |   |   |   |   |   |   make = dodge: -1 (1.0)
+|   |   |   |   |   |   |   |   |   make != dodge: 0 (54.76/3.63)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0
+|   |   |   body-style = sedan
+|   |   |   |   make = audi: 2 (1.0)
+|   |   |   |   make != audi: 0 (3.0)
+|   |   |   body-style != sedan
+|   |   |   |   num-of-cylinders = five: 0 (2.0)
+|   |   |   |   num-of-cylinders != five
+|   |   |   |   |   make = mercury: 1 (1.0)
+|   |   |   |   |   make != mercury
+|   |   |   |   |   |   engine-type = dohcv: 1 (1.0)
+|   |   |   |   |   |   engine-type != dohcv
+|   |   |   |   |   |   |   engine-type = ohcv
+|   |   |   |   |   |   |   |   make = alfa-romero: 1 (1.0)
+|   |   |   |   |   |   |   |   make != alfa-romero
+|   |   |   |   |   |   |   |   |   wheel-base <= 97.3: 3 (3.0)
+|   |   |   |   |   |   |   |   |   wheel-base > 97.3: 1 (2.0)
+|   |   |   |   |   |   |   engine-type != ohcv: 3 (20.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39
+|   |   |   |   make = volkswagen
+|   |   |   |   |   body-style = sedan: 2 (2.0)
+|   |   |   |   |   body-style != sedan: 3 (2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   height <= 49.7: 3 (2.0)
+|   |   |   |   |   height > 49.7
+|   |   |   |   |   |   make = mitsubishi
+|   |   |   |   |   |   |   aspiration = std: 2 (3.0)
+|   |   |   |   |   |   |   aspiration != std: 1 (1.0)
+|   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   |   body-style = hardtop: 2 (1.0)
+|   |   |   |   |   |   |   |   body-style != hardtop
+|   |   |   |   |   |   |   |   |   wheel-base <= 96.1: 1 (24.46)
+|   |   |   |   |   |   |   |   |   wheel-base > 96.1
+|   |   |   |   |   |   |   |   |   |   fuel-system = 2bbl: 1 (3.0)
+|   |   |   |   |   |   |   |   |   |   fuel-system != 2bbl: 0 (2.46)
+|   |   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	35
+
+Size of the tree : 	69
+
+
+Time taken to build model: 0.22 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         200               97.561  %
+Incorrectly Classified Instances         5                2.439  %
+Kappa statistic                          0.9682
+Mean absolute error                      0.1072
+Root mean squared error                  0.1799
+Relative absolute error                 48.5194 %
+Root relative squared error             54.2365 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 18  3  1  0  0 |  c = -1
+  0  0  0 67  0  0  0 |  d = 0
+  0  0  0  1 53  0  0 |  e = 1
+  0  0  0  0  0 32  0 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         165               80.4878 %
+Incorrectly Classified Instances        40               19.5122 %
+Kappa statistic                          0.7469
+Mean absolute error                      0.1349
+Root mean squared error                  0.2386
+Relative absolute error                 61.0138 %
+Root relative squared error             71.8891 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  3 56  6  1  1 |  d = 0
+  0  0  1  2 44  2  5 |  e = 1
+  0  0  0  2  6 22  2 |  f = 2
+  0  0  0  0  1  3 23 |  g = 3
+

@@ -1,0 +1,150 @@
+
+Options: -C 0.60 -M 2 -L 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   height <= 51.6: 1 (10.56/1.0)
+|   |   height > 51.6
+|   |   |   curb-weight <= 2050
+|   |   |   |   horsepower <= 69: 1 (7.0)
+|   |   |   |   horsepower > 69: 0 (4.0)
+|   |   |   curb-weight > 2050
+|   |   |   |   height <= 55.6
+|   |   |   |   |   price <= 13860: 0 (31.56)
+|   |   |   |   |   price > 13860
+|   |   |   |   |   |   normalized-losses <= 168: 2 (2.0)
+|   |   |   |   |   |   normalized-losses > 168: 0 (2.0)
+|   |   |   |   height > 55.6
+|   |   |   |   |   body-style = hardtop: 2 (0.0)
+|   |   |   |   |   body-style = wagon: 0 (4.0)
+|   |   |   |   |   body-style = sedan: 2 (8.0)
+|   |   |   |   |   body-style = hatchback: 2 (0.0)
+|   |   |   |   |   body-style = convertible: 2 (0.0)
+|   wheel-base > 101.2
+|   |   make = alfa-romero: -1 (0.0)
+|   |   make = audi: 1 (3.0)
+|   |   make = bmw: 0 (3.0/1.0)
+|   |   make = chevrolet: -1 (0.0)
+|   |   make = dodge: -1 (1.0)
+|   |   make = honda: -1 (0.0)
+|   |   make = isuzu: -1 (0.0)
+|   |   make = jaguar: 0 (2.0)
+|   |   make = mazda: 0 (2.0)
+|   |   make = mercedes-benz: -1 (5.0/1.0)
+|   |   make = mercury: -1 (0.0)
+|   |   make = mitsubishi: -1 (0.0)
+|   |   make = nissan: -1 (0.0)
+|   |   make = peugot: 0 (11.0)
+|   |   make = plymouth: -1 (1.0)
+|   |   make = porsche: -1 (0.0)
+|   |   make = renault: -1 (0.0)
+|   |   make = saab: -1 (0.0)
+|   |   make = subaru: -1 (0.0)
+|   |   make = toyota: -1 (7.0)
+|   |   make = volkswagen: -1 (0.0)
+|   |   make = volvo
+|   |   |   normalized-losses <= 98: -1 (8.0)
+|   |   |   normalized-losses > 98: -2 (3.0)
+num-of-doors = two
+|   city-mpg <= 22
+|   |   wheel-base <= 99.1
+|   |   |   engine-type = dohc: 3 (3.0)
+|   |   |   engine-type = dohcv: 1 (1.0)
+|   |   |   engine-type = l: 3 (0.0)
+|   |   |   engine-type = ohc: 3 (8.0)
+|   |   |   engine-type = ohcf: 3 (3.0)
+|   |   |   engine-type = ohcv: 3 (4.0/1.0)
+|   |   |   engine-type = rotor: 3 (4.0)
+|   |   wheel-base > 99.1
+|   |   |   engine-type = dohc: 3 (2.0)
+|   |   |   engine-type = dohcv: 0 (0.0)
+|   |   |   engine-type = l: 0 (0.0)
+|   |   |   engine-type = ohc
+|   |   |   |   num-of-cylinders = eight: 0 (0.0)
+|   |   |   |   num-of-cylinders = five: 0 (3.0/1.0)
+|   |   |   |   num-of-cylinders = four: 1 (1.0)
+|   |   |   |   num-of-cylinders = six: 0 (2.0)
+|   |   |   |   num-of-cylinders = three: 0 (0.0)
+|   |   |   |   num-of-cylinders = twelve: 0 (0.0)
+|   |   |   |   num-of-cylinders = two: 0 (0.0)
+|   |   |   engine-type = ohcf: 0 (0.0)
+|   |   |   engine-type = ohcv: 1 (3.0/1.0)
+|   |   |   engine-type = rotor: 0 (0.0)
+|   city-mpg > 22
+|   |   bore <= 3.39
+|   |   |   engine-size <= 103
+|   |   |   |   width <= 64.2
+|   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   body-style = hardtop: 2 (1.0)
+|   |   |   |   |   |   body-style = wagon: 1 (0.0)
+|   |   |   |   |   |   body-style = sedan: 1 (7.44)
+|   |   |   |   |   |   body-style = hatchback: 1 (18.0)
+|   |   |   |   |   |   body-style = convertible: 1 (0.0)
+|   |   |   |   width > 64.2: 2 (4.0)
+|   |   |   engine-size > 103
+|   |   |   |   compression-ratio <= 8.5: 3 (4.0)
+|   |   |   |   compression-ratio > 8.5
+|   |   |   |   |   city-mpg <= 26: 1 (3.0)
+|   |   |   |   |   city-mpg > 26: 0 (3.44/1.0)
+|   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	65
+
+Size of the tree : 	88
+
+
+Time taken to build model: 0.18 seconds
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         198               96.5854 %
+Incorrectly Classified Instances         7                3.4146 %
+Kappa statistic                          0.9556
+Mean absolute error                      0.0144
+Root mean squared error                  0.0847
+Relative absolute error                  6.5163 %
+Root relative squared error             25.5159 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 21  0  1  0  0 |  c = -1
+  0  0  1 65  1  0  0 |  d = 0
+  0  0  0  1 52  0  1 |  e = 1
+  0  0  0  2  0 30  0 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         174               84.878  %
+Incorrectly Classified Instances        31               15.122  %
+Kappa statistic                          0.8039
+Mean absolute error                      0.0523
+Root mean squared error                  0.1987
+Relative absolute error                 23.6549 %
+Root relative squared error             59.8715 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 19  0  3  0  0 |  c = -1
+  0  0  1 61  1  1  3 |  d = 0
+  0  0  1  2 45  0  6 |  e = 1
+  0  0  0  2  7 23  0 |  f = 2
+  0  0  1  0  1  2 23 |  g = 3
+

@@ -1,0 +1,109 @@
+
+Options: -R -B -M 2 -N 6 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (7.0)
+|   normalized-losses > 98.0: -2 (2.0)
+make != volvo
+|   num-of-doors = four
+|   |   wheel-base <= 95.1: 1 (12.55/2.0)
+|   |   wheel-base > 95.1
+|   |   |   make = saab: 2 (3.0)
+|   |   |   make != saab
+|   |   |   |   make = audi: 1 (5.0/2.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = mitsubishi: 1 (3.0/1.0)
+|   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   make = volkswagen: 2 (7.0/3.0)
+|   |   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   |   normalized-losses <= 74.0
+|   |   |   |   |   |   |   |   |   make = toyota: -1 (5.13/1.0)
+|   |   |   |   |   |   |   |   |   make != toyota: 0 (2.04/1.0)
+|   |   |   |   |   |   |   |   normalized-losses > 74.0: 0 (47.83/2.87)
+|   num-of-doors != four
+|   |   height <= 50.2: 3 (16.0/2.0)
+|   |   height > 50.2
+|   |   |   make = saab: 3 (3.0)
+|   |   |   make != saab
+|   |   |   |   body-style = convertible: 3 (3.0)
+|   |   |   |   body-style != convertible
+|   |   |   |   |   num-of-cylinders = five: 0 (3.0/1.0)
+|   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   num-of-cylinders = six
+|   |   |   |   |   |   |   height <= 52.0: 3 (2.0)
+|   |   |   |   |   |   |   height > 52.0: 0 (2.0/1.0)
+|   |   |   |   |   |   num-of-cylinders != six
+|   |   |   |   |   |   |   make = volkswagen: 2 (3.0/1.0)
+|   |   |   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   |   |   make = subaru: 2 (2.0)
+|   |   |   |   |   |   |   |   make != subaru
+|   |   |   |   |   |   |   |   |   stroke <= 3.47
+|   |   |   |   |   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   |   |   |   |   make = mitsubishi: 2 (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   make != mitsubishi: 1 (26.45/2.0)
+|   |   |   |   |   |   |   |   |   stroke > 3.47
+|   |   |   |   |   |   |   |   |   |   normalized-losses <= 119.0: 0 (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   normalized-losses > 119.0: 2 (5.0)
+
+Number of Leaves  : 	24
+
+Size of the tree : 	47
+
+
+Time taken to build model: 0.23 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         178               86.8293 %
+Incorrectly Classified Instances        27               13.1707 %
+Kappa statistic                          0.8281
+Mean absolute error                      0.0573
+Root mean squared error                  0.1723
+Relative absolute error                 25.925  %
+Root relative squared error             51.9318 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 16  5  1  0  0 |  c = -1
+  0  0  0 60  3  3  1 |  d = 0
+  0  0  1  3 48  1  1 |  e = 1
+  0  0  0  1  5 25  1 |  f = 2
+  0  0  0  0  0  1 26 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         142               69.2683 %
+Incorrectly Classified Instances        63               30.7317 %
+Kappa statistic                          0.6   
+Mean absolute error                      0.1088
+Root mean squared error                  0.2573
+Relative absolute error                 49.1926 %
+Root relative squared error             77.5204 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  1 53  5  4  4 |  d = 0
+  0  0  2  4 39  3  6 |  e = 1
+  0  0  0  3 13 14  2 |  f = 2
+  0  0  0  0  2  6 19 |  g = 3
+

@@ -1,0 +1,107 @@
+
+Options: -R -B -M 3 -N 6 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (9.0/2.0)
+make != volvo
+|   num-of-doors = four
+|   |   wheel-base <= 95.1: 1 (12.55/2.0)
+|   |   wheel-base > 95.1
+|   |   |   make = saab: 2 (3.0)
+|   |   |   make != saab
+|   |   |   |   make = audi: 1 (5.0/2.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = mitsubishi: 1 (3.0/1.0)
+|   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   make = volkswagen: 2 (7.0/3.0)
+|   |   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   |   normalized-losses <= 74.0: -1 (7.17/2.04)
+|   |   |   |   |   |   |   |   normalized-losses > 74.0: 0 (47.83/2.87)
+|   num-of-doors != four
+|   |   height <= 50.2: 3 (16.0/2.0)
+|   |   height > 50.2
+|   |   |   make = saab: 3 (3.0)
+|   |   |   make != saab
+|   |   |   |   body-style = convertible: 3 (3.0)
+|   |   |   |   body-style != convertible
+|   |   |   |   |   num-of-cylinders = five: 0 (3.0/1.0)
+|   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   num-of-cylinders = six: 3 (4.0/2.0)
+|   |   |   |   |   |   num-of-cylinders != six
+|   |   |   |   |   |   |   make = volkswagen: 2 (3.0/1.0)
+|   |   |   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   |   |   make = nissan: 1 (5.0)
+|   |   |   |   |   |   |   |   make != nissan
+|   |   |   |   |   |   |   |   |   aspiration = std
+|   |   |   |   |   |   |   |   |   |   make = mazda: 1 (3.0)
+|   |   |   |   |   |   |   |   |   |   make != mazda
+|   |   |   |   |   |   |   |   |   |   |   fuel-system = 1bbl: 1 (5.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   fuel-system != 1bbl
+|   |   |   |   |   |   |   |   |   |   |   |   bore <= 3.33
+|   |   |   |   |   |   |   |   |   |   |   |   |   wheel-base <= 93.7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   normalized-losses <= 119.0: 1 (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   normalized-losses > 119.0: 2 (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   wheel-base > 93.7: 1 (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   bore > 3.33: 2 (11.0/2.0)
+|   |   |   |   |   |   |   |   |   aspiration != std: 1 (3.45)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	45
+
+
+Time taken to build model: 0.2 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         172               83.9024 %
+Incorrectly Classified Instances        33               16.0976 %
+Kappa statistic                          0.791 
+Mean absolute error                      0.1376
+Root mean squared error                  0.2284
+Relative absolute error                 62.2975 %
+Root relative squared error             68.8498 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  0 56  5  3  3 |  d = 0
+  0  0  1  1 48  2  2 |  e = 1
+  0  0  0  1  5 25  1 |  f = 2
+  0  0  0  0  0  1 26 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         145               70.7317 %
+Incorrectly Classified Instances        60               29.2683 %
+Kappa statistic                          0.6176
+Mean absolute error                      0.1547
+Root mean squared error                  0.2638
+Relative absolute error                 69.9728 %
+Root relative squared error             79.4821 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 18  3  1  0  0 |  c = -1
+  0  0  1 51  7  3  5 |  d = 0
+  0  0  2  5 41  0  6 |  e = 1
+  0  0  0  3 13 15  1 |  f = 2
+  0  0  0  4  1  2 20 |  g = 3
+

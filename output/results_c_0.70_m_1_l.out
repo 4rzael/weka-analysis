@@ -1,0 +1,190 @@
+
+Options: -C 0.70 -M 1 -L 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   height <= 51.6
+|   |   |   fuel-system = 1bbl: 1 (0.0)
+|   |   |   fuel-system = 2bbl: 1 (8.0)
+|   |   |   fuel-system = 4bbl: 1 (0.0)
+|   |   |   fuel-system = idi: 1 (0.0)
+|   |   |   fuel-system = mfi: 1 (0.0)
+|   |   |   fuel-system = mpfi: 1 (0.56)
+|   |   |   fuel-system = spdi
+|   |   |   |   normalized-losses <= 129: 1 (1.0)
+|   |   |   |   normalized-losses > 129: -1 (1.0)
+|   |   |   fuel-system = spfi: 1 (0.0)
+|   |   height > 51.6
+|   |   |   curb-weight <= 2050
+|   |   |   |   horsepower <= 69: 1 (7.0)
+|   |   |   |   horsepower > 69: 0 (4.0)
+|   |   |   curb-weight > 2050
+|   |   |   |   height <= 55.6
+|   |   |   |   |   price <= 13860: 0 (31.56)
+|   |   |   |   |   price > 13860
+|   |   |   |   |   |   make = alfa-romero: 0 (0.0)
+|   |   |   |   |   |   make = audi: 2 (2.0)
+|   |   |   |   |   |   make = bmw: 0 (2.0)
+|   |   |   |   |   |   make = chevrolet: 0 (0.0)
+|   |   |   |   |   |   make = dodge: 0 (0.0)
+|   |   |   |   |   |   make = honda: 0 (0.0)
+|   |   |   |   |   |   make = isuzu: 0 (0.0)
+|   |   |   |   |   |   make = jaguar: 0 (0.0)
+|   |   |   |   |   |   make = mazda: 0 (0.0)
+|   |   |   |   |   |   make = mercedes-benz: 0 (0.0)
+|   |   |   |   |   |   make = mercury: 0 (0.0)
+|   |   |   |   |   |   make = mitsubishi: 0 (0.0)
+|   |   |   |   |   |   make = nissan: 0 (0.0)
+|   |   |   |   |   |   make = peugot: 0 (0.0)
+|   |   |   |   |   |   make = plymouth: 0 (0.0)
+|   |   |   |   |   |   make = porsche: 0 (0.0)
+|   |   |   |   |   |   make = renault: 0 (0.0)
+|   |   |   |   |   |   make = saab: 0 (0.0)
+|   |   |   |   |   |   make = subaru: 0 (0.0)
+|   |   |   |   |   |   make = toyota: 0 (0.0)
+|   |   |   |   |   |   make = volkswagen: 0 (0.0)
+|   |   |   |   |   |   make = volvo: 0 (0.0)
+|   |   |   |   height > 55.6
+|   |   |   |   |   body-style = hardtop: 2 (0.0)
+|   |   |   |   |   body-style = wagon: 0 (4.0)
+|   |   |   |   |   body-style = sedan: 2 (8.0)
+|   |   |   |   |   body-style = hatchback: 2 (0.0)
+|   |   |   |   |   body-style = convertible: 2 (0.0)
+|   wheel-base > 101.2
+|   |   make = alfa-romero: -1 (0.0)
+|   |   make = audi: 1 (3.0)
+|   |   make = bmw
+|   |   |   engine-size <= 183: 1 (1.0)
+|   |   |   engine-size > 183: 0 (2.0)
+|   |   make = chevrolet: -1 (0.0)
+|   |   make = dodge: -1 (1.0)
+|   |   make = honda: -1 (0.0)
+|   |   make = isuzu: -1 (0.0)
+|   |   make = jaguar: 0 (2.0)
+|   |   make = mazda: 0 (2.0)
+|   |   make = mercedes-benz
+|   |   |   wheel-base <= 115.6: -1 (4.0)
+|   |   |   wheel-base > 115.6: 0 (1.0)
+|   |   make = mercury: -1 (0.0)
+|   |   make = mitsubishi: -1 (0.0)
+|   |   make = nissan: -1 (0.0)
+|   |   make = peugot: 0 (11.0)
+|   |   make = plymouth: -1 (1.0)
+|   |   make = porsche: -1 (0.0)
+|   |   make = renault: -1 (0.0)
+|   |   make = saab: -1 (0.0)
+|   |   make = subaru: -1 (0.0)
+|   |   make = toyota: -1 (7.0)
+|   |   make = volkswagen: -1 (0.0)
+|   |   make = volvo
+|   |   |   normalized-losses <= 98: -1 (8.0)
+|   |   |   normalized-losses > 98: -2 (3.0)
+num-of-doors = two
+|   city-mpg <= 22
+|   |   wheel-base <= 99.1
+|   |   |   engine-type = dohc: 3 (3.0)
+|   |   |   engine-type = dohcv: 1 (1.0)
+|   |   |   engine-type = l: 3 (0.0)
+|   |   |   engine-type = ohc: 3 (8.0)
+|   |   |   engine-type = ohcf: 3 (3.0)
+|   |   |   engine-type = ohcv
+|   |   |   |   width <= 66.6: 1 (1.0)
+|   |   |   |   width > 66.6: 3 (3.0)
+|   |   |   engine-type = rotor: 3 (4.0)
+|   |   wheel-base > 99.1
+|   |   |   drive-wheels = 4wd: 0 (1.0)
+|   |   |   drive-wheels = fwd: 2 (1.0)
+|   |   |   drive-wheels = rwd
+|   |   |   |   bore <= 3.27: 3 (2.0)
+|   |   |   |   bore > 3.27
+|   |   |   |   |   body-style = hardtop
+|   |   |   |   |   |   fuel-type = diesel: 0 (1.0)
+|   |   |   |   |   |   fuel-type = gas: 1 (1.0)
+|   |   |   |   |   body-style = wagon: 0 (0.0)
+|   |   |   |   |   body-style = sedan: 0 (3.0)
+|   |   |   |   |   body-style = hatchback: 1 (2.0)
+|   |   |   |   |   body-style = convertible: 0 (0.0)
+|   city-mpg > 22
+|   |   bore <= 3.39
+|   |   |   engine-size <= 103
+|   |   |   |   width <= 64.2
+|   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   body-style = hardtop: 2 (1.0)
+|   |   |   |   |   |   body-style = wagon: 1 (0.0)
+|   |   |   |   |   |   body-style = sedan: 1 (7.44)
+|   |   |   |   |   |   body-style = hatchback: 1 (18.0)
+|   |   |   |   |   |   body-style = convertible: 1 (0.0)
+|   |   |   |   width > 64.2: 2 (4.0)
+|   |   |   engine-size > 103
+|   |   |   |   wheel-base <= 96.3: 3 (4.0)
+|   |   |   |   wheel-base > 96.3
+|   |   |   |   |   fuel-system = 1bbl: 0 (2.0)
+|   |   |   |   |   fuel-system = 2bbl: 1 (3.0)
+|   |   |   |   |   fuel-system = 4bbl: 1 (0.0)
+|   |   |   |   |   fuel-system = idi: 0 (0.44)
+|   |   |   |   |   fuel-system = mfi: 1 (0.0)
+|   |   |   |   |   fuel-system = mpfi: 2 (1.0)
+|   |   |   |   |   fuel-system = spdi: 1 (0.0)
+|   |   |   |   |   fuel-system = spfi: 1 (0.0)
+|   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	98
+
+Size of the tree : 	128
+
+
+Time taken to build model: 0.26 seconds
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         205              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0     
+Relative absolute error                  0      %
+Root relative squared error              0      %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 22  0  0  0  0 |  c = -1
+  0  0  0 67  0  0  0 |  d = 0
+  0  0  0  0 54  0  0 |  e = 1
+  0  0  0  0  0 32  0 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         173               84.3902 %
+Incorrectly Classified Instances        32               15.6098 %
+Kappa statistic                          0.7963
+Mean absolute error                      0.0461
+Root mean squared error                  0.2061
+Relative absolute error                 20.8656 %
+Root relative squared error             62.1038 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 18  1  3  0  0 |  c = -1
+  0  0  1 61  2  1  2 |  d = 0
+  0  0  0  4 45  0  5 |  e = 1
+  0  0  0  2  6 24  0 |  f = 2
+  0  0  0  0  3  2 22 |  g = 3
+

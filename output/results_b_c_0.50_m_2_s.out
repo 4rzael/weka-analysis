@@ -1,0 +1,117 @@
+
+Options: -B -C 0.50 -M 2 -S 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (8.0)
+|   normalized-losses > 98.0: -2 (3.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (10.54/1.0)
+|   |   height > 51.6
+|   |   |   make = saab: 2 (3.0)
+|   |   |   make != saab
+|   |   |   |   make = audi
+|   |   |   |   |   wheel-base <= 102.7: 2 (2.0)
+|   |   |   |   |   wheel-base > 102.7: 1 (3.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = volkswagen
+|   |   |   |   |   |   wheel-base <= 98.8: 2 (5.0)
+|   |   |   |   |   |   wheel-base > 98.8: 0 (3.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   curb-weight <= 2050.0
+|   |   |   |   |   |   |   horsepower <= 69.0: 1 (7.0)
+|   |   |   |   |   |   |   horsepower > 69.0: 0 (4.0)
+|   |   |   |   |   |   curb-weight > 2050.0
+|   |   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   |   normalized-losses <= 74.0: -1 (7.78/1.54)
+|   |   |   |   |   |   |   |   normalized-losses > 74.0: 0 (55.76/4.63)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0
+|   |   |   body-style = sedan: 0 (4.0/1.0)
+|   |   |   body-style != sedan
+|   |   |   |   num-of-cylinders = five: 0 (2.0)
+|   |   |   |   num-of-cylinders != five
+|   |   |   |   |   num-of-cylinders = eight: 1 (3.0/1.0)
+|   |   |   |   |   num-of-cylinders != eight
+|   |   |   |   |   |   engine-type = ohcv
+|   |   |   |   |   |   |   wheel-base <= 91.3: 3 (2.0)
+|   |   |   |   |   |   |   wheel-base > 91.3: 1 (2.0)
+|   |   |   |   |   |   engine-type != ohcv: 3 (21.0/1.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39
+|   |   |   |   make = volkswagen
+|   |   |   |   |   body-style = sedan: 2 (2.0)
+|   |   |   |   |   body-style != sedan: 3 (2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   height <= 49.7: 3 (2.0)
+|   |   |   |   |   height > 49.7
+|   |   |   |   |   |   make = mitsubishi: 2 (4.0/1.0)
+|   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   |   fuel-system = 1bbl
+|   |   |   |   |   |   |   |   |   normalized-losses <= 103.0: 1 (3.0)
+|   |   |   |   |   |   |   |   |   normalized-losses > 103.0: 0 (2.0)
+|   |   |   |   |   |   |   |   fuel-system != 1bbl: 1 (25.93/1.46)
+|   |   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	55
+
+
+Time taken to build model: 0.14 seconds
+Time taken to test model on training data: 0.05 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         194               94.6341 %
+Incorrectly Classified Instances        11                5.3659 %
+Kappa statistic                          0.9298
+Mean absolute error                      0.0306
+Root mean squared error                  0.1177
+Relative absolute error                 13.8594 %
+Root relative squared error             35.4895 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  0 67  0  0  0 |  d = 0
+  0  0  0  1 51  1  1 |  e = 1
+  0  0  0  1  1 30  0 |  f = 2
+  0  0  0  0  1  0 26 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         162               79.0244 %
+Incorrectly Classified Instances        43               20.9756 %
+Kappa statistic                          0.7277
+Mean absolute error                      0.0723
+Root mean squared error                  0.228 
+Relative absolute error                 32.7238 %
+Root relative squared error             68.6966 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 16  5  1  0  0 |  c = -1
+  0  0  4 55  6  0  2 |  d = 0
+  0  0  1  2 44  2  5 |  e = 1
+  0  0  0  2  5 23  2 |  f = 2
+  0  0  0  0  3  3 21 |  g = 3
+

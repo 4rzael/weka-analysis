@@ -1,0 +1,107 @@
+
+Options: -B -C 0.20 -M 3 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (8.0)
+|   normalized-losses > 98.0: -2 (3.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (10.54/1.0)
+|   |   height > 51.6
+|   |   |   make = saab: 2 (3.0)
+|   |   |   make != saab
+|   |   |   |   make = audi: 1 (5.0/2.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = volkswagen
+|   |   |   |   |   |   wheel-base <= 98.8: 2 (5.0)
+|   |   |   |   |   |   wheel-base > 98.8: 0 (3.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   curb-weight <= 2050.0
+|   |   |   |   |   |   |   horsepower <= 69.0: 1 (7.0)
+|   |   |   |   |   |   |   horsepower > 69.0: 0 (4.0)
+|   |   |   |   |   |   curb-weight > 2050.0
+|   |   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   |   normalized-losses <= 74.0: -1 (7.78/1.54)
+|   |   |   |   |   |   |   |   normalized-losses > 74.0: 0 (55.76/4.63)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0
+|   |   |   body-style = sedan: 0 (4.0/1.0)
+|   |   |   body-style != sedan
+|   |   |   |   num-of-cylinders = eight: 1 (3.0/1.0)
+|   |   |   |   num-of-cylinders != eight
+|   |   |   |   |   wheel-base <= 99.1: 3 (21.0/1.0)
+|   |   |   |   |   wheel-base > 99.1
+|   |   |   |   |   |   aspiration = std: 3 (3.0/1.0)
+|   |   |   |   |   |   aspiration != std: 0 (3.0/1.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39
+|   |   |   |   make = volkswagen: 2 (4.0/2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   make = mitsubishi
+|   |   |   |   |   |   curb-weight <= 2050.0: 2 (3.0)
+|   |   |   |   |   |   curb-weight > 2050.0: 3 (3.0/1.0)
+|   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   wheel-base > 89.5: 1 (30.93/3.46)
+|   |   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	45
+
+
+Time taken to build model: 0.24 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         186               90.7317 %
+Incorrectly Classified Instances        19                9.2683 %
+Kappa statistic                          0.8787
+Mean absolute error                      0.1136
+Root mean squared error                  0.1951
+Relative absolute error                 51.4354 %
+Root relative squared error             58.8181 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  0 65  2  0  0 |  d = 0
+  0  0  0  2 49  0  3 |  e = 1
+  0  0  0  1  3 28  0 |  f = 2
+  0  0  0  0  1  2 24 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         151               73.6585 %
+Incorrectly Classified Instances        54               26.3415 %
+Kappa statistic                          0.6547
+Mean absolute error                      0.1425
+Root mean squared error                  0.2516
+Relative absolute error                 64.4658 %
+Root relative squared error             75.8012 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  1 15  5  1  0  0 |  c = -1
+  0  0  1 56  5  1  4 |  d = 0
+  0  0  1  5 41  1  6 |  e = 1
+  0  0  0  5  8 18  1 |  f = 2
+  0  0  0  1  3  2 21 |  g = 3
+

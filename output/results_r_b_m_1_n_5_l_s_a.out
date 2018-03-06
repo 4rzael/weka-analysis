@@ -1,0 +1,97 @@
+
+Options: -R -B -M 1 -N 5 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (6.0)
+|   normalized-losses > 98.0: -2 (2.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (6.53)
+|   |   height > 51.6
+|   |   |   curb-weight <= 2050.0
+|   |   |   |   horsepower <= 69.0: 1 (6.0)
+|   |   |   |   horsepower > 69.0: 0 (3.0)
+|   |   |   curb-weight > 2050.0
+|   |   |   |   make = audi: 1 (4.0/2.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = saab: 2 (2.0)
+|   |   |   |   |   make != saab
+|   |   |   |   |   |   make = volkswagen: 2 (7.0/3.0)
+|   |   |   |   |   |   make != volkswagen: 0 (53.53/12.0)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0: 3 (28.0/9.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39
+|   |   |   |   make = volkswagen: 2 (4.0/2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   make = mitsubishi
+|   |   |   |   |   |   |   normalized-losses <= 154.0: 3 (1.0)
+|   |   |   |   |   |   |   normalized-losses > 154.0: 2 (3.0/1.0)
+|   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   fuel-system = 1bbl
+|   |   |   |   |   |   |   |   normalized-losses <= 103.0: 1 (2.0)
+|   |   |   |   |   |   |   |   normalized-losses > 103.0: 0 (1.0)
+|   |   |   |   |   |   |   fuel-system != 1bbl: 1 (21.95/0.47)
+|   |   |   bore > 3.39: 2 (10.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+
+Time taken to build model: 0.21 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         170               82.9268 %
+Incorrectly Classified Instances        35               17.0732 %
+Kappa statistic                          0.7767
+Mean absolute error                      0.1356
+Root mean squared error                  0.23  
+Relative absolute error                 61.3659 %
+Root relative squared error             69.3391 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0  8 13  1  0  0 |  c = -1
+  0  0  0 59  0  3  5 |  d = 0
+  0  0  0  1 47  1  5 |  e = 1
+  0  0  0  0  3 28  1 |  f = 2
+  0  0  0  0  0  2 25 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         144               70.2439 %
+Incorrectly Classified Instances        61               29.7561 %
+Kappa statistic                          0.6095
+Mean absolute error                      0.16  
+Root mean squared error                  0.2706
+Relative absolute error                 72.3497 %
+Root relative squared error             81.5269 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 11 10  1  0  0 |  c = -1
+  0  0  1 52  5  5  4 |  d = 0
+  0  0  0  7 42  1  4 |  e = 1
+  0  0  0  2  8 17  5 |  f = 2
+  0  0  1  1  1  2 22 |  g = 3
+

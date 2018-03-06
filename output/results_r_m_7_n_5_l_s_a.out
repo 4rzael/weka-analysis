@@ -1,0 +1,121 @@
+
+Options: -R -M 7 -N 5 -L -S -A 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   width <= 65.4
+|   |   |   wheel-base <= 95.1: 1 (11.55/2.0)
+|   |   |   wheel-base > 95.1
+|   |   |   |   make = alfa-romero: 0 (0.0)
+|   |   |   |   make = audi: 0 (0.0)
+|   |   |   |   make = bmw: 0 (2.0)
+|   |   |   |   make = chevrolet: 0 (0.0)
+|   |   |   |   make = dodge: 0 (0.0)
+|   |   |   |   make = honda: 0 (5.0)
+|   |   |   |   make = isuzu: 0 (0.0)
+|   |   |   |   make = jaguar: 0 (0.0)
+|   |   |   |   make = mazda: 0 (0.0)
+|   |   |   |   make = mercedes-benz: 0 (0.0)
+|   |   |   |   make = mercury: 0 (0.0)
+|   |   |   |   make = mitsubishi: 1 (2.0)
+|   |   |   |   make = nissan: 0 (2.0)
+|   |   |   |   make = peugot: 0 (0.0)
+|   |   |   |   make = plymouth: 0 (0.0)
+|   |   |   |   make = porsche: 0 (0.0)
+|   |   |   |   make = renault: 0 (0.0)
+|   |   |   |   make = saab: 0 (0.0)
+|   |   |   |   make = subaru: 0 (7.0)
+|   |   |   |   make = toyota: 0 (9.0/1.0)
+|   |   |   |   make = volkswagen: 0 (0.0)
+|   |   |   |   make = volvo: 0 (0.0)
+|   |   width > 65.4
+|   |   |   height <= 55.6: 0 (8.55/2.0)
+|   |   |   height > 55.6: 2 (7.0/1.0)
+|   wheel-base > 101.2
+|   |   make = alfa-romero: -1 (0.0)
+|   |   make = audi: 1 (2.0)
+|   |   make = bmw: 0 (2.0)
+|   |   make = chevrolet: -1 (0.0)
+|   |   make = dodge: -1 (1.0)
+|   |   make = honda: -1 (0.0)
+|   |   make = isuzu: -1 (0.0)
+|   |   make = jaguar: 0 (1.0)
+|   |   make = mazda: 0 (1.0)
+|   |   make = mercedes-benz: -1 (5.0/1.0)
+|   |   make = mercury: -1 (0.0)
+|   |   make = mitsubishi: -1 (0.0)
+|   |   make = nissan: -1 (0.0)
+|   |   make = peugot: 0 (9.0)
+|   |   make = plymouth: -1 (0.0)
+|   |   make = porsche: -1 (0.0)
+|   |   make = renault: -1 (0.0)
+|   |   make = saab: -1 (0.0)
+|   |   make = subaru: -1 (0.0)
+|   |   make = toyota: -1 (7.0)
+|   |   make = volkswagen: -1 (0.0)
+|   |   make = volvo: -1 (8.0/2.0)
+num-of-doors = two
+|   city-mpg <= 22: 3 (28.0/9.0)
+|   city-mpg > 22
+|   |   bore <= 3.39: 1 (35.9/11.45)
+|   |   bore > 3.39: 2 (10.0)
+
+Number of Leaves  : 	50
+
+Size of the tree : 	59
+
+
+Time taken to build model: 0.18 seconds
+Time taken to test model on training data: 0.05 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         165               80.4878 %
+Incorrectly Classified Instances        40               19.5122 %
+Kappa statistic                          0.7468
+Mean absolute error                      0.1537
+Root mean squared error                  0.2455
+Relative absolute error                 69.5778 %
+Root relative squared error             73.9948 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 21  0  1  0  0 |  c = -1
+  0  0  1 54  6  1  5 |  d = 0
+  0  0  0  2 47  0  5 |  e = 1
+  0  0  0  2  9 20  1 |  f = 2
+  0  0  0  0  4  0 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         131               63.9024 %
+Incorrectly Classified Instances        74               36.0976 %
+Kappa statistic                          0.5304
+Mean absolute error                      0.1754
+Root mean squared error                  0.2806
+Relative absolute error                 79.3492 %
+Root relative squared error             84.552  %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 17  5  0  0  0 |  c = -1
+  0  0  4 48  7  4  4 |  d = 0
+  0  0  3  7 36  0  8 |  e = 1
+  0  0  0  5 13 10  4 |  f = 2
+  0  0  2  1  4  0 20 |  g = 3
+

@@ -1,0 +1,73 @@
+
+Options: -R -B -M 9 -N 8 -L -S 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (10.0/3.0)
+make != volvo
+|   num-of-doors = four
+|   |   wheel-base <= 95.1: 1 (12.52/2.0)
+|   |   wheel-base > 95.1: 0 (75.52/26.0)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0: 3 (30.0/10.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39: 1 (40.96/15.48)
+|   |   |   bore > 3.39: 2 (11.0)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	11
+
+
+Time taken to build model: 0.15 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         141               68.7805 %
+Incorrectly Classified Instances        64               31.2195 %
+Kappa statistic                          0.5813
+Mean absolute error                      0.1356
+Root mean squared error                  0.2609
+Relative absolute error                 61.3768 %
+Root relative squared error             78.6364 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0  8 14  0  0  0 |  c = -1
+  0  0  0 57  5  0  5 |  d = 0
+  0  0  0  8 41  0  5 |  e = 1
+  0  0  0 10  9 12  1 |  f = 2
+  0  0  0  0  4  0 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         133               64.878  %
+Incorrectly Classified Instances        72               35.122  %
+Kappa statistic                          0.5366
+Mean absolute error                      0.1378
+Root mean squared error                  0.2744
+Relative absolute error                 62.3375 %
+Root relative squared error             82.6902 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  2  1  0  0  0 |  b = -2
+  0  0 16  6  0  0  0 |  c = -1
+  0  0  3 51  7  2  4 |  d = 0
+  0  0  4  6 39  1  4 |  e = 1
+  0  0  0 10 14  6  2 |  f = 2
+  0  0  0  0  5  1 21 |  g = 3
+

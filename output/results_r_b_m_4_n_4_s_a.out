@@ -1,0 +1,91 @@
+
+Options: -R -B -M 4 -N 4 -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (8.0/2.0)
+make != volvo
+|   height <= 50.2: 3 (15.0/2.0)
+|   height > 50.2
+|   |   wheel-base <= 95.1
+|   |   |   engine-size <= 108.0: 1 (38.0/10.0)
+|   |   |   engine-size > 108.0: 3 (5.0/1.0)
+|   |   wheel-base > 95.1
+|   |   |   make = saab: 3 (5.0/2.0)
+|   |   |   make != saab
+|   |   |   |   engine-type = dohc: -1 (5.0/3.0)
+|   |   |   |   engine-type != dohc
+|   |   |   |   |   engine-type = ohc
+|   |   |   |   |   |   wheel-base <= 101.2
+|   |   |   |   |   |   |   fuel-system = 2bbl
+|   |   |   |   |   |   |   |   num-of-doors = four: 0 (12.0/2.0)
+|   |   |   |   |   |   |   |   num-of-doors != four: 1 (4.0)
+|   |   |   |   |   |   |   fuel-system != 2bbl
+|   |   |   |   |   |   |   |   make = honda: 0 (4.0)
+|   |   |   |   |   |   |   |   make != honda
+|   |   |   |   |   |   |   |   |   length <= 177.3
+|   |   |   |   |   |   |   |   |   |   width <= 65.4: 0 (8.0/4.0)
+|   |   |   |   |   |   |   |   |   |   width > 65.4: 2 (12.0)
+|   |   |   |   |   |   |   |   |   length > 177.3: 0 (5.0)
+|   |   |   |   |   |   wheel-base > 101.2
+|   |   |   |   |   |   |   city-mpg <= 20.0: 0 (6.0/3.0)
+|   |   |   |   |   |   |   city-mpg > 20.0: -1 (9.0/1.0)
+|   |   |   |   |   engine-type != ohc: 0 (18.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	29
+
+
+Time taken to build model: 0.15 seconds
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         161               78.5366 %
+Incorrectly Classified Instances        44               21.4634 %
+Kappa statistic                          0.7192
+Mean absolute error                      0.1423
+Root mean squared error                  0.2356
+Relative absolute error                 64.4058 %
+Root relative squared error             71.002  %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 20  2  0  0  0 |  c = -1
+  0  0  4 59  2  0  2 |  d = 0
+  0  0  0 11 41  0  2 |  e = 1
+  0  0  0  2 10 17  3 |  f = 2
+  0  0  2  1  0  0 24 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         137               66.8293 %
+Incorrectly Classified Instances        68               33.1707 %
+Kappa statistic                          0.566 
+Mean absolute error                      0.1648
+Root mean squared error                  0.2716
+Relative absolute error                 74.5407 %
+Root relative squared error             81.8288 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  1 14  6  1  0  0 |  c = -1
+  0  0  5 51  4  3  4 |  d = 0
+  0  0  2  8 38  1  5 |  e = 1
+  0  0  0  6 11 12  3 |  f = 2
+  0  0  0  0  5  0 22 |  g = 3
+

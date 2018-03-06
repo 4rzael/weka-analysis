@@ -1,0 +1,126 @@
+
+Options: -C 0.30 -M 3 -S -A 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   height <= 51.6: 1 (10.56/1.0)
+|   |   height > 51.6
+|   |   |   curb-weight <= 2050
+|   |   |   |   horsepower <= 69: 1 (7.0)
+|   |   |   |   horsepower > 69: 0 (4.0)
+|   |   |   curb-weight > 2050
+|   |   |   |   width <= 65.4: 0 (27.0)
+|   |   |   |   width > 65.4
+|   |   |   |   |   width <= 66.4: 2 (7.0)
+|   |   |   |   |   width > 66.4
+|   |   |   |   |   |   stroke <= 3.16: 2 (3.0)
+|   |   |   |   |   |   stroke > 3.16: 0 (10.56)
+|   wheel-base > 101.2
+|   |   make = alfa-romero: -1 (0.0)
+|   |   make = audi: 1 (3.0)
+|   |   make = bmw: 0 (3.0/1.0)
+|   |   make = chevrolet: -1 (0.0)
+|   |   make = dodge: -1 (1.0)
+|   |   make = honda: -1 (0.0)
+|   |   make = isuzu: -1 (0.0)
+|   |   make = jaguar: 0 (2.0)
+|   |   make = mazda: 0 (2.0)
+|   |   make = mercedes-benz: -1 (5.0/1.0)
+|   |   make = mercury: -1 (0.0)
+|   |   make = mitsubishi: -1 (0.0)
+|   |   make = nissan: -1 (0.0)
+|   |   make = peugot: 0 (11.0)
+|   |   make = plymouth: -1 (1.0)
+|   |   make = porsche: -1 (0.0)
+|   |   make = renault: -1 (0.0)
+|   |   make = saab: -1 (0.0)
+|   |   make = subaru: -1 (0.0)
+|   |   make = toyota: -1 (7.0)
+|   |   make = volkswagen: -1 (0.0)
+|   |   make = volvo
+|   |   |   normalized-losses <= 98: -1 (8.0)
+|   |   |   normalized-losses > 98: -2 (3.0)
+num-of-doors = two
+|   city-mpg <= 22
+|   |   wheel-base <= 99.1: 3 (23.0/2.0)
+|   |   wheel-base > 99.1
+|   |   |   engine-type = dohc: 3 (2.0)
+|   |   |   engine-type = dohcv: 0 (0.0)
+|   |   |   engine-type = l: 0 (0.0)
+|   |   |   engine-type = ohc: 0 (6.0/2.0)
+|   |   |   engine-type = ohcf: 0 (0.0)
+|   |   |   engine-type = ohcv: 1 (3.0/1.0)
+|   |   |   engine-type = rotor: 0 (0.0)
+|   city-mpg > 22
+|   |   bore <= 3.39
+|   |   |   engine-size <= 103
+|   |   |   |   width <= 64.2
+|   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   wheel-base > 89.5: 1 (26.44/1.0)
+|   |   |   |   width > 64.2: 2 (4.0)
+|   |   |   engine-size > 103
+|   |   |   |   wheel-base <= 96.3: 3 (4.0)
+|   |   |   |   wheel-base > 96.3
+|   |   |   |   |   city-mpg <= 26: 1 (3.0)
+|   |   |   |   |   city-mpg > 26: 0 (3.44/1.0)
+|   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	45
+
+Size of the tree : 	64
+
+
+Time taken to build model: 0.18 seconds
+Time taken to test model on training data: 0.07 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         195               95.122  %
+Incorrectly Classified Instances        10                4.878  %
+Kappa statistic                          0.9366
+Mean absolute error                      0.1137
+Root mean squared error                  0.1839
+Relative absolute error                 51.4806 %
+Root relative squared error             55.4267 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 21  0  1  0  0 |  c = -1
+  0  0  1 65  1  0  0 |  d = 0
+  0  0  0  2 50  0  2 |  e = 1
+  0  0  0  2  1 29  0 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         156               76.0976 %
+Incorrectly Classified Instances        49               23.9024 %
+Kappa statistic                          0.6913
+Mean absolute error                      0.1588
+Root mean squared error                  0.2565
+Relative absolute error                 71.8115 %
+Root relative squared error             77.2718 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  1 18  0  3  0  0 |  c = -1
+  0  0  3 55  4  1  4 |  d = 0
+  0  0  2  4 39  0  9 |  e = 1
+  0  0  0  2  8 22  0 |  f = 2
+  0  0  1  1  2  1 22 |  g = 3
+

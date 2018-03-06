@@ -1,0 +1,97 @@
+
+Options: -R -M 8 -N 5 -L -S -A 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   width <= 65.4
+|   |   |   wheel-base <= 95.1: 1 (11.55/2.0)
+|   |   |   wheel-base > 95.1: 0 (27.0/3.0)
+|   |   width > 65.4: 2 (15.55/7.55)
+|   wheel-base > 101.2
+|   |   make = alfa-romero: -1 (0.0)
+|   |   make = audi: 1 (2.0)
+|   |   make = bmw: 0 (2.0)
+|   |   make = chevrolet: -1 (0.0)
+|   |   make = dodge: -1 (1.0)
+|   |   make = honda: -1 (0.0)
+|   |   make = isuzu: -1 (0.0)
+|   |   make = jaguar: 0 (1.0)
+|   |   make = mazda: 0 (1.0)
+|   |   make = mercedes-benz: -1 (5.0/1.0)
+|   |   make = mercury: -1 (0.0)
+|   |   make = mitsubishi: -1 (0.0)
+|   |   make = nissan: -1 (0.0)
+|   |   make = peugot: 0 (9.0)
+|   |   make = plymouth: -1 (0.0)
+|   |   make = porsche: -1 (0.0)
+|   |   make = renault: -1 (0.0)
+|   |   make = saab: -1 (0.0)
+|   |   make = subaru: -1 (0.0)
+|   |   make = toyota: -1 (7.0)
+|   |   make = volkswagen: -1 (0.0)
+|   |   make = volvo: -1 (8.0/2.0)
+num-of-doors = two
+|   city-mpg <= 22: 3 (28.0/9.0)
+|   city-mpg > 22
+|   |   bore <= 3.39: 1 (35.9/11.45)
+|   |   bore > 3.39: 2 (10.0)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	35
+
+
+Time taken to build model: 0.17 seconds
+Time taken to test model on training data: 0.1 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         155               75.6098 %
+Incorrectly Classified Instances        50               24.3902 %
+Kappa statistic                          0.6869
+Mean absolute error                      0.148 
+Root mean squared error                  0.2464
+Relative absolute error                 67.0058 %
+Root relative squared error             74.2703 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 21  1  0  0  0 |  c = -1
+  0  0  1 45  5 11  5 |  d = 0
+  0  0  0  5 44  0  5 |  e = 1
+  0  0  0  0  9 22  1 |  f = 2
+  0  0  0  0  4  0 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         126               61.4634 %
+Incorrectly Classified Instances        79               38.5366 %
+Kappa statistic                          0.498 
+Mean absolute error                      0.1776
+Root mean squared error                  0.2842
+Relative absolute error                 80.3371 %
+Root relative squared error             85.6396 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 15  7  0  0  0 |  c = -1
+  0  0  4 48  6  4  5 |  d = 0
+  0  0  3  8 33  3  7 |  e = 1
+  0  0  0  5 12 11  4 |  f = 2
+  0  0  2  1  5  0 19 |  g = 3
+

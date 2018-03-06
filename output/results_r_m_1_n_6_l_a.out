@@ -1,0 +1,142 @@
+
+Options: -R -M 1 -N 6 -L -A 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   make = alfa-romero: 0 (0.0)
+|   make = audi: 1 (5.0/2.0)
+|   make = bmw: 0 (4.0)
+|   make = chevrolet: 0 (1.0)
+|   make = dodge: 1 (4.57/1.0)
+|   make = honda: 0 (5.0)
+|   make = isuzu: 0 (1.0)
+|   make = jaguar: 0 (2.0)
+|   make = mazda: 0 (6.0/2.0)
+|   make = mercedes-benz: -1 (4.0/1.0)
+|   make = mercury: 0 (0.0)
+|   make = mitsubishi: 1 (3.0/1.0)
+|   make = nissan
+|   |   wheel-base <= 95.7: 1 (3.0)
+|   |   wheel-base > 95.7: 0 (4.0)
+|   make = peugot: 0 (9.0)
+|   make = plymouth: 1 (3.0/1.0)
+|   make = porsche: 0 (0.0)
+|   make = renault: 0 (1.0)
+|   make = saab: 2 (3.0)
+|   make = subaru: 0 (7.0)
+|   make = toyota
+|   |   wheel-base <= 98.8: 0 (10.0/1.0)
+|   |   wheel-base > 98.8: -1 (6.0)
+|   make = volkswagen: 2 (7.0/3.0)
+|   make = volvo
+|   |   normalized-losses <= 98: -1 (7.0)
+|   |   normalized-losses > 98: -2 (2.0)
+num-of-doors = two
+|   height <= 50.2: 3 (16.0/2.0)
+|   height > 50.2
+|   |   num-of-cylinders = eight: 1 (3.0/1.0)
+|   |   num-of-cylinders = five: 0 (3.0/1.0)
+|   |   num-of-cylinders = four
+|   |   |   height <= 55.2
+|   |   |   |   bore <= 3.39
+|   |   |   |   |   wheel-base <= 89.5: 2 (2.0)
+|   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   width <= 64.2: 1 (22.43/1.0)
+|   |   |   |   |   |   width > 64.2
+|   |   |   |   |   |   |   fuel-system = 1bbl: 0 (1.0)
+|   |   |   |   |   |   |   fuel-system = 2bbl
+|   |   |   |   |   |   |   |   normalized-losses <= 145: 1 (2.0)
+|   |   |   |   |   |   |   |   normalized-losses > 145: 2 (2.0)
+|   |   |   |   |   |   |   fuel-system = 4bbl: 1 (0.0)
+|   |   |   |   |   |   |   fuel-system = idi: 1 (0.0)
+|   |   |   |   |   |   |   fuel-system = mfi: 1 (0.0)
+|   |   |   |   |   |   |   fuel-system = mpfi: 1 (0.0)
+|   |   |   |   |   |   |   fuel-system = spdi: 1 (0.0)
+|   |   |   |   |   |   |   fuel-system = spfi: 1 (0.0)
+|   |   |   |   bore > 3.39: 2 (9.0/1.0)
+|   |   |   height > 55.2: 3 (7.0/3.0)
+|   |   num-of-cylinders = six
+|   |   |   make = alfa-romero: 1 (1.0)
+|   |   |   make = audi: 3 (0.0)
+|   |   |   make = bmw: 0 (1.0)
+|   |   |   make = chevrolet: 3 (0.0)
+|   |   |   make = dodge: 3 (0.0)
+|   |   |   make = honda: 3 (0.0)
+|   |   |   make = isuzu: 3 (0.0)
+|   |   |   make = jaguar: 3 (0.0)
+|   |   |   make = mazda: 3 (0.0)
+|   |   |   make = mercedes-benz: 3 (0.0)
+|   |   |   make = mercury: 3 (0.0)
+|   |   |   make = mitsubishi: 3 (0.0)
+|   |   |   make = nissan: 3 (0.0)
+|   |   |   make = peugot: 3 (0.0)
+|   |   |   make = plymouth: 3 (0.0)
+|   |   |   make = porsche: 3 (2.0)
+|   |   |   make = renault: 3 (0.0)
+|   |   |   make = saab: 3 (0.0)
+|   |   |   make = subaru: 3 (0.0)
+|   |   |   make = toyota: 3 (1.0)
+|   |   |   make = volkswagen: 3 (0.0)
+|   |   |   make = volvo: 3 (0.0)
+|   |   num-of-cylinders = three: 2 (1.0)
+|   |   num-of-cylinders = twelve: 1 (0.0)
+|   |   num-of-cylinders = two: 1 (0.0)
+
+Number of Leaves  : 	66
+
+Size of the tree : 	80
+
+
+Time taken to build model: 0.17 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         182               88.7805 %
+Incorrectly Classified Instances        23               11.2195 %
+Kappa statistic                          0.8541
+Mean absolute error                      0.151 
+Root mean squared error                  0.2339
+Relative absolute error                 68.3489 %
+Root relative squared error             70.5057 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 19  0  3  0  0 |  c = -1
+  0  0  1 62  0  3  1 |  d = 0
+  0  0  0  4 48  1  1 |  e = 1
+  0  0  0  1  3 25  3 |  f = 2
+  0  0  0  0  2  0 25 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         155               75.6098 %
+Incorrectly Classified Instances        50               24.3902 %
+Kappa statistic                          0.6833
+Mean absolute error                      0.1704
+Root mean squared error                  0.2683
+Relative absolute error                 77.0675 %
+Root relative squared error             80.8443 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 17  3  2  0  0 |  c = -1
+  0  0  1 54  5  3  4 |  d = 0
+  0  0  1  7 40  0  6 |  e = 1
+  0  0  0  0  9 20  3 |  f = 2
+  0  0  1  0  2  0 24 |  g = 3
+

@@ -1,0 +1,95 @@
+
+Options: -R -B -M 2 -N 2 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (4.0)
+|   normalized-losses > 98.0: -2 (2.0)
+make != volvo
+|   num-of-doors = four
+|   |   make = saab: 2 (2.0)
+|   |   make != saab
+|   |   |   make = volkswagen: 2 (4.0/1.0)
+|   |   |   make != volkswagen
+|   |   |   |   make = audi: 1 (3.0/1.0)
+|   |   |   |   make != audi
+|   |   |   |   |   curb-weight <= 2050.0
+|   |   |   |   |   |   horsepower <= 69.0: 1 (7.0)
+|   |   |   |   |   |   horsepower > 69.0: 0 (2.0)
+|   |   |   |   |   curb-weight > 2050.0: 0 (35.0/8.0)
+|   num-of-doors != four
+|   |   fuel-system = 2bbl
+|   |   |   engine-type = ohc: 1 (12.0/1.0)
+|   |   |   engine-type != ohc: 2 (2.0)
+|   |   fuel-system != 2bbl
+|   |   |   peak-rpm <= 4900.0
+|   |   |   |   normalized-losses <= 128.0: 0 (2.0/1.0)
+|   |   |   |   normalized-losses > 128.0: 2 (4.0)
+|   |   |   peak-rpm > 4900.0
+|   |   |   |   body-style = sedan: 0 (2.0/1.0)
+|   |   |   |   body-style != sedan
+|   |   |   |   |   make = honda: 0 (3.0/2.0)
+|   |   |   |   |   make != honda
+|   |   |   |   |   |   engine-type = ohcv: 1 (3.0/1.0)
+|   |   |   |   |   |   engine-type != ohcv
+|   |   |   |   |   |   |   price <= 9639.0: 1 (2.0)
+|   |   |   |   |   |   |   price > 9639.0: 3 (14.0/1.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	33
+
+
+Time taken to build model: 0.14 seconds
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         155               75.6098 %
+Incorrectly Classified Instances        50               24.3902 %
+Kappa statistic                          0.6743
+Mean absolute error                      0.0867
+Root mean squared error                  0.2266
+Relative absolute error                 39.26   %
+Root relative squared error             68.3156 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0  8 14  0  0  0 |  c = -1
+  0  0  0 62  0  4  1 |  d = 0
+  0  0  0 11 40  1  2 |  e = 1
+  0  0  0  5  6 19  2 |  f = 2
+  0  0  0  0  3  1 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         135               65.8537 %
+Incorrectly Classified Instances        70               34.1463 %
+Kappa statistic                          0.5535
+Mean absolute error                      0.1117
+Root mean squared error                  0.2766
+Relative absolute error                 50.5091 %
+Root relative squared error             83.3288 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 13  8  1  0  0 |  c = -1
+  0  0  2 55  3  5  2 |  d = 0
+  0  0  1  7 33  6  7 |  e = 1
+  0  0  1  7  6 14  4 |  f = 2
+  0  0  1  1  1  4 20 |  g = 3
+

@@ -1,0 +1,121 @@
+
+Options: -R -M 3 -N 9 -S 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   make = alfa-romero: 0 (0.0)
+|   make = audi: 1 (5.0/2.0)
+|   make = bmw: 0 (4.0/1.0)
+|   make = chevrolet: 0 (1.0)
+|   make = dodge: 1 (3.57/1.0)
+|   make = honda: 0 (4.0)
+|   make = isuzu: 0 (1.0)
+|   make = jaguar: 0 (2.0)
+|   make = mazda: 0 (7.57/2.0)
+|   make = mercedes-benz: -1 (5.0/1.0)
+|   make = mercury: 0 (0.0)
+|   make = mitsubishi: 1 (4.0/1.0)
+|   make = nissan
+|   |   compression-ratio <= 9.2: 0 (5.0)
+|   |   compression-ratio > 9.2: 1 (3.0)
+|   make = peugot: 0 (10.0)
+|   make = plymouth: 1 (4.0/1.0)
+|   make = porsche: 0 (0.0)
+|   make = renault: 0 (1.0)
+|   make = saab: 2 (2.0)
+|   make = subaru: 0 (8.0)
+|   make = toyota
+|   |   wheel-base <= 98.8: 0 (10.0/1.0)
+|   |   wheel-base > 98.8: -1 (6.0)
+|   make = volkswagen: 2 (8.0/3.0)
+|   make = volvo: -1 (10.0/3.0)
+num-of-doors = two
+|   city-mpg <= 22: 3 (32.0/10.0)
+|   city-mpg > 22
+|   |   bore <= 3.39
+|   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   wheel-base > 89.5
+|   |   |   |   width <= 64.1: 1 (20.43)
+|   |   |   |   width > 64.1
+|   |   |   |   |   make = alfa-romero: 1 (0.0)
+|   |   |   |   |   make = audi: 1 (0.0)
+|   |   |   |   |   make = bmw: 1 (0.0)
+|   |   |   |   |   make = chevrolet: 1 (0.0)
+|   |   |   |   |   make = dodge: 1 (0.0)
+|   |   |   |   |   make = honda: 0 (2.0/1.0)
+|   |   |   |   |   make = isuzu: 1 (0.0)
+|   |   |   |   |   make = jaguar: 1 (0.0)
+|   |   |   |   |   make = mazda: 1 (4.43/0.43)
+|   |   |   |   |   make = mercedes-benz: 1 (0.0)
+|   |   |   |   |   make = mercury: 1 (0.0)
+|   |   |   |   |   make = mitsubishi: 2 (3.0/1.0)
+|   |   |   |   |   make = nissan: 1 (0.0)
+|   |   |   |   |   make = peugot: 1 (0.0)
+|   |   |   |   |   make = plymouth: 1 (0.0)
+|   |   |   |   |   make = porsche: 1 (0.0)
+|   |   |   |   |   make = renault: 1 (0.0)
+|   |   |   |   |   make = saab: 1 (0.0)
+|   |   |   |   |   make = subaru: 1 (0.0)
+|   |   |   |   |   make = toyota: 1 (0.0)
+|   |   |   |   |   make = volkswagen: 2 (2.0/1.0)
+|   |   |   |   |   make = volvo: 1 (0.0)
+|   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	50
+
+Size of the tree : 	59
+
+
+Time taken to build model: 0.13 seconds
+Time taken to test model on training data: 0.07 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         171               83.4146 %
+Incorrectly Classified Instances        34               16.5854 %
+Kappa statistic                          0.7859
+Mean absolute error                      0.0676
+Root mean squared error                  0.1868
+Relative absolute error                 30.6111 %
+Root relative squared error             56.3112 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 19  0  3  0  0 |  c = -1
+  0  0  1 57  1  3  5 |  d = 0
+  0  0  0  5 44  0  5 |  e = 1
+  0  0  0  0  3 28  1 |  f = 2
+  0  0  0  0  1  3 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         141               68.7805 %
+Incorrectly Classified Instances        64               31.2195 %
+Kappa statistic                          0.5877
+Mean absolute error                      0.1158
+Root mean squared error                  0.2589
+Relative absolute error                 52.3984 %
+Root relative squared error             78.0117 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 16  4  2  0  0 |  c = -1
+  0  0  1 55  6  1  4 |  d = 0
+  0  0  1 10 38  1  4 |  e = 1
+  0  0  0  3 11 16  2 |  f = 2
+  0  0  0  1  8  2 16 |  g = 3
+

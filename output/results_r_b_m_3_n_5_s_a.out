@@ -1,0 +1,97 @@
+
+Options: -R -B -M 3 -N 5 -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (8.0/2.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (6.53)
+|   |   height > 51.6
+|   |   |   make = audi: 1 (4.0/2.0)
+|   |   |   make != audi
+|   |   |   |   curb-weight <= 2050.0
+|   |   |   |   |   horsepower <= 69.0: 1 (6.0)
+|   |   |   |   |   horsepower > 69.0: 0 (3.0)
+|   |   |   |   curb-weight > 2050.0
+|   |   |   |   |   make = volkswagen: 2 (7.0/3.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   make = toyota: 0 (15.0/7.0)
+|   |   |   |   |   |   |   make != toyota
+|   |   |   |   |   |   |   |   engine-type = ohcv: 0 (4.0/1.0)
+|   |   |   |   |   |   |   |   engine-type != ohcv
+|   |   |   |   |   |   |   |   |   drive-wheels = fwd
+|   |   |   |   |   |   |   |   |   |   wheel-base <= 98.8: 0 (10.53)
+|   |   |   |   |   |   |   |   |   |   wheel-base > 98.8: 2 (3.0/1.0)
+|   |   |   |   |   |   |   |   |   drive-wheels != fwd: 0 (20.0)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0: 3 (28.0/9.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39
+|   |   |   |   make = volkswagen: 2 (4.0/2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   make = mitsubishi: 2 (4.0/2.0)
+|   |   |   |   |   |   make != mitsubishi: 1 (24.95/1.47)
+|   |   |   bore > 3.39: 2 (10.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+
+Time taken to build model: 0.13 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         165               80.4878 %
+Incorrectly Classified Instances        40               19.5122 %
+Kappa statistic                          0.7462
+Mean absolute error                      0.1386
+Root mean squared error                  0.229 
+Relative absolute error                 62.7443 %
+Root relative squared error             69.0271 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 11  8  1  2  0 |  c = -1
+  0  0  0 56  3  3  5 |  d = 0
+  0  0  0  1 47  1  5 |  e = 1
+  0  0  0  0  3 28  1 |  f = 2
+  0  0  0  0  0  4 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         130               63.4146 %
+Incorrectly Classified Instances        75               36.5854 %
+Kappa statistic                          0.5155
+Mean absolute error                      0.1642
+Root mean squared error                  0.2814
+Relative absolute error                 74.2884 %
+Root relative squared error             84.7829 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 10 11  1  0  0 |  c = -1
+  0  0  1 54  5  2  5 |  d = 0
+  0  0  1 11 35  0  7 |  e = 1
+  0  0  1  6 10 10  5 |  f = 2
+  0  0  0  0  4  2 21 |  g = 3
+

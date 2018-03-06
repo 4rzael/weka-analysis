@@ -1,0 +1,77 @@
+
+Options: -R -M 9 -N 3 -L -S 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   wheel-base <= 96.3
+|   |   |   normalized-losses <= 95: 0 (9.87/1.0)
+|   |   |   normalized-losses > 95: 1 (12.71/2.13)
+|   |   wheel-base > 96.3: 0 (26.0/6.0)
+|   wheel-base > 101.2
+|   |   normalized-losses <= 98: -1 (17.52/3.96)
+|   |   normalized-losses > 98: 0 (13.48/4.87)
+num-of-doors = two
+|   city-mpg <= 22: 3 (23.0/7.0)
+|   city-mpg > 22
+|   |   engine-size <= 103: 1 (21.42/5.0)
+|   |   engine-size > 103: 2 (13.0/4.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+
+Time taken to build model: 0.13 seconds
+Time taken to test model on training data: 0.08 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         144               70.2439 %
+Incorrectly Classified Instances        61               29.7561 %
+Kappa statistic                          0.615 
+Mean absolute error                      0.1167
+Root mean squared error                  0.2413
+Relative absolute error                 52.8232 %
+Root relative squared error             72.7435 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  0  3  0  0  0 |  b = -2
+  0  0 20  1  1  0  0 |  c = -1
+  0  0  9 48  3  2  5 |  d = 0
+  0  0  2  3 41  3  5 |  e = 1
+  0  0  0 10  9 12  1 |  f = 2
+  0  0  0  0  0  4 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         115               56.0976 %
+Incorrectly Classified Instances        90               43.9024 %
+Kappa statistic                          0.4162
+Mean absolute error                      0.1548
+Root mean squared error                  0.2944
+Relative absolute error                 70.0257 %
+Root relative squared error             88.7069 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  0  3  0  0  0 |  b = -2
+  0  0  9 13  0  0  0 |  c = -1
+  0  0  4 53  4  1  5 |  d = 0
+  0  0  4 11 26  6  7 |  e = 1
+  0  0  0 11 14  5  2 |  f = 2
+  0  0  0  1  1  3 22 |  g = 3
+

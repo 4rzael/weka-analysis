@@ -1,0 +1,77 @@
+
+Options: -R -B -M 9 -N 9 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (10.0/3.0)
+make != volvo
+|   height <= 50.2: 3 (17.0/2.0)
+|   height > 50.2
+|   |   num-of-doors = four
+|   |   |   height <= 51.6: 1 (9.6/1.0)
+|   |   |   height > 51.6
+|   |   |   |   wheel-base <= 101.2
+|   |   |   |   |   curb-weight <= 2050.0: 1 (10.0/4.0)
+|   |   |   |   |   curb-weight > 2050.0: 0 (42.6/9.0)
+|   |   |   |   wheel-base > 101.2
+|   |   |   |   |   bore <= 3.39: -1 (12.0/4.0)
+|   |   |   |   |   bore > 3.39: 0 (20.0/4.0)
+|   |   num-of-doors != four: 1 (61.79/33.4)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+
+Time taken to build model: 0.17 seconds
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         138               67.3171 %
+Incorrectly Classified Instances        67               32.6829 %
+Kappa statistic                          0.5612
+Mean absolute error                      0.1559
+Root mean squared error                  0.2604
+Relative absolute error                 70.5889 %
+Root relative squared error             78.4959 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  0 56 10  0  1 |  d = 0
+  0  0  4  0 49  0  1 |  e = 1
+  0  0  0 10 22  0  0 |  f = 2
+  0  0  0  0 11  0 16 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         125               60.9756 %
+Incorrectly Classified Instances        80               39.0244 %
+Kappa statistic                          0.4902
+Mean absolute error                      0.1679
+Root mean squared error                  0.2824
+Relative absolute error                 75.9285 %
+Root relative squared error             85.0994 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  2  1  0  0  0 |  b = -2
+  0  0 15  5  2  0  0 |  c = -1
+  0  0  8 46  6  3  4 |  d = 0
+  0  0  4  8 35  1  6 |  e = 1
+  0  0  0  9 14  7  2 |  f = 2
+  0  0  0  0  4  1 22 |  g = 3
+

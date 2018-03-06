@@ -1,0 +1,118 @@
+
+Options: -C 0.40 -M 4 -L -S 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   wheel-base <= 101.2
+|   |   height <= 51.6: 1 (10.56/1.0)
+|   |   height > 51.6
+|   |   |   curb-weight <= 2050
+|   |   |   |   horsepower <= 69: 1 (7.0)
+|   |   |   |   horsepower > 69: 0 (4.0)
+|   |   |   curb-weight > 2050
+|   |   |   |   height <= 55.6: 0 (35.56/2.0)
+|   |   |   |   height > 55.6
+|   |   |   |   |   body-style = hardtop: 2 (0.0)
+|   |   |   |   |   body-style = wagon: 0 (4.0)
+|   |   |   |   |   body-style = sedan: 2 (8.0)
+|   |   |   |   |   body-style = hatchback: 2 (0.0)
+|   |   |   |   |   body-style = convertible: 2 (0.0)
+|   wheel-base > 101.2
+|   |   make = alfa-romero: -1 (0.0)
+|   |   make = audi: 1 (3.0)
+|   |   make = bmw: 0 (3.0/1.0)
+|   |   make = chevrolet: -1 (0.0)
+|   |   make = dodge: -1 (1.0)
+|   |   make = honda: -1 (0.0)
+|   |   make = isuzu: -1 (0.0)
+|   |   make = jaguar: 0 (2.0)
+|   |   make = mazda: 0 (2.0)
+|   |   make = mercedes-benz: -1 (5.0/1.0)
+|   |   make = mercury: -1 (0.0)
+|   |   make = mitsubishi: -1 (0.0)
+|   |   make = nissan: -1 (0.0)
+|   |   make = peugot: 0 (11.0)
+|   |   make = plymouth: -1 (1.0)
+|   |   make = porsche: -1 (0.0)
+|   |   make = renault: -1 (0.0)
+|   |   make = saab: -1 (0.0)
+|   |   make = subaru: -1 (0.0)
+|   |   make = toyota: -1 (7.0)
+|   |   make = volkswagen: -1 (0.0)
+|   |   make = volvo: -1 (11.0/3.0)
+num-of-doors = two
+|   city-mpg <= 22
+|   |   wheel-base <= 99.1: 3 (23.0/2.0)
+|   |   wheel-base > 99.1
+|   |   |   width <= 67.7: 3 (4.0/2.0)
+|   |   |   width > 67.7: 0 (7.0/3.0)
+|   city-mpg > 22
+|   |   bore <= 3.39
+|   |   |   engine-size <= 103
+|   |   |   |   width <= 64.2
+|   |   |   |   |   wheel-base <= 93: 2 (4.0/1.0)
+|   |   |   |   |   wheel-base > 93: 1 (25.44/1.0)
+|   |   |   |   width > 64.2: 2 (4.0)
+|   |   |   engine-size > 103
+|   |   |   |   wheel-base <= 96.3: 3 (4.0)
+|   |   |   |   wheel-base > 96.3: 1 (6.44/3.44)
+|   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	40
+
+Size of the tree : 	56
+
+
+Time taken to build model: 0.14 seconds
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         185               90.2439 %
+Incorrectly Classified Instances        20                9.7561 %
+Kappa statistic                          0.8731
+Mean absolute error                      0.0416
+Root mean squared error                  0.1439
+Relative absolute error                 18.8295 %
+Root relative squared error             43.3704 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 21  0  1  0  0 |  c = -1
+  0  0  1 63  2  0  1 |  d = 0
+  0  0  0  4 47  1  2 |  e = 1
+  0  0  0  2  2 27  1 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         145               70.7317 %
+Incorrectly Classified Instances        60               29.2683 %
+Kappa statistic                          0.622 
+Mean absolute error                      0.093 
+Root mean squared error                  0.2473
+Relative absolute error                 42.064  %
+Root relative squared error             74.5138 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  3 16  0  3  0  0 |  c = -1
+  0  0  3 54  1  4  5 |  d = 0
+  0  0  2  7 36  0  9 |  e = 1
+  0  0  0  1 11 19  1 |  f = 2
+  0  0  1  3  2  1 20 |  g = 3
+

@@ -1,0 +1,135 @@
+
+Options: -B -C 0.50 -M 1 -L -S 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (8.0)
+|   normalized-losses > 98.0: -2 (3.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (10.54/1.0)
+|   |   height > 51.6
+|   |   |   make = saab: 2 (3.0)
+|   |   |   make != saab
+|   |   |   |   make = audi
+|   |   |   |   |   length <= 184.6: 2 (2.0)
+|   |   |   |   |   length > 184.6: 1 (3.0)
+|   |   |   |   make != audi
+|   |   |   |   |   make = volkswagen
+|   |   |   |   |   |   wheel-base <= 98.8: 2 (5.0)
+|   |   |   |   |   |   wheel-base > 98.8: 0 (3.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   curb-weight <= 2050.0
+|   |   |   |   |   |   |   horsepower <= 69.0: 1 (7.0)
+|   |   |   |   |   |   |   horsepower > 69.0: 0 (4.0)
+|   |   |   |   |   |   curb-weight > 2050.0
+|   |   |   |   |   |   |   num-of-cylinders = five: -1 (3.0)
+|   |   |   |   |   |   |   num-of-cylinders != five
+|   |   |   |   |   |   |   |   normalized-losses <= 74.0
+|   |   |   |   |   |   |   |   |   drive-wheels = fwd: -1 (6.19/0.19)
+|   |   |   |   |   |   |   |   |   drive-wheels != fwd: 0 (1.59/0.37)
+|   |   |   |   |   |   |   |   normalized-losses > 74.0
+|   |   |   |   |   |   |   |   |   make = dodge: -1 (1.0)
+|   |   |   |   |   |   |   |   |   make != dodge
+|   |   |   |   |   |   |   |   |   |   engine-type = dohc
+|   |   |   |   |   |   |   |   |   |   |   make = jaguar: 0 (1.88)
+|   |   |   |   |   |   |   |   |   |   |   make != jaguar: -1 (1.88)
+|   |   |   |   |   |   |   |   |   |   engine-type != dohc: 0 (51.0/1.76)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0
+|   |   |   body-style = sedan
+|   |   |   |   make = audi: 2 (1.0)
+|   |   |   |   make != audi: 0 (3.0)
+|   |   |   body-style != sedan
+|   |   |   |   num-of-cylinders = five: 0 (2.0)
+|   |   |   |   num-of-cylinders != five
+|   |   |   |   |   make = mercury: 1 (1.0)
+|   |   |   |   |   make != mercury
+|   |   |   |   |   |   engine-type = dohcv: 1 (1.0)
+|   |   |   |   |   |   engine-type != dohcv
+|   |   |   |   |   |   |   engine-type = ohcv
+|   |   |   |   |   |   |   |   make = alfa-romero: 1 (1.0)
+|   |   |   |   |   |   |   |   make != alfa-romero
+|   |   |   |   |   |   |   |   |   wheel-base <= 97.3: 3 (3.0)
+|   |   |   |   |   |   |   |   |   wheel-base > 97.3: 1 (2.0)
+|   |   |   |   |   |   |   engine-type != ohcv: 3 (20.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39
+|   |   |   |   make = volkswagen
+|   |   |   |   |   body-style = sedan: 2 (2.0)
+|   |   |   |   |   body-style != sedan: 3 (2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   height <= 49.7: 3 (2.0)
+|   |   |   |   |   height > 49.7
+|   |   |   |   |   |   make = mitsubishi
+|   |   |   |   |   |   |   aspiration = std: 2 (3.0)
+|   |   |   |   |   |   |   aspiration != std: 1 (1.0)
+|   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   |   body-style = hardtop: 2 (1.0)
+|   |   |   |   |   |   |   |   body-style != hardtop
+|   |   |   |   |   |   |   |   |   wheel-base <= 96.1: 1 (24.46)
+|   |   |   |   |   |   |   |   |   wheel-base > 96.1
+|   |   |   |   |   |   |   |   |   |   fuel-system = 2bbl: 1 (3.0)
+|   |   |   |   |   |   |   |   |   |   fuel-system != 2bbl: 0 (2.46)
+|   |   |   bore > 3.39: 2 (12.0)
+
+Number of Leaves  : 	37
+
+Size of the tree : 	73
+
+
+Time taken to build model: 0.17 seconds
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         202               98.5366 %
+Incorrectly Classified Instances         3                1.4634 %
+Kappa statistic                          0.981 
+Mean absolute error                      0.0086
+Root mean squared error                  0.0628
+Relative absolute error                  3.9098 %
+Root relative squared error             18.9419 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 20  1  1  0  0 |  c = -1
+  0  0  0 67  0  0  0 |  d = 0
+  0  0  0  1 53  0  0 |  e = 1
+  0  0  0  0  0 32  0 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         166               80.9756 %
+Incorrectly Classified Instances        39               19.0244 %
+Kappa statistic                          0.7531
+Mean absolute error                      0.059 
+Root mean squared error                  0.2263
+Relative absolute error                 26.6838 %
+Root relative squared error             68.1745 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  3 57  5  1  1 |  d = 0
+  0  0  1  2 44  2  5 |  e = 1
+  0  0  0  2  6 22  2 |  f = 2
+  0  0  0  0  1  3 23 |  g = 3
+

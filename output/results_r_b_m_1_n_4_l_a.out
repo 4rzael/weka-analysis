@@ -1,0 +1,117 @@
+
+Options: -R -B -M 1 -N 4 -L -A 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (6.0)
+|   normalized-losses > 98.0: -2 (2.0)
+make != volvo
+|   height <= 50.2: 3 (15.0/2.0)
+|   height > 50.2
+|   |   wheel-base <= 95.1
+|   |   |   make = porsche: 3 (2.0)
+|   |   |   make != porsche
+|   |   |   |   make = volkswagen: 3 (2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   make = subaru: 2 (2.0)
+|   |   |   |   |   make != subaru
+|   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   make = mitsubishi: 2 (4.0/1.0)
+|   |   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   |   width <= 63.6: 0 (4.0/2.0)
+|   |   |   |   |   |   |   |   width > 63.6: 1 (26.0)
+|   |   wheel-base > 95.1
+|   |   |   make = saab
+|   |   |   |   normalized-losses <= 125.0: 2 (2.0)
+|   |   |   |   normalized-losses > 125.0: 3 (3.0)
+|   |   |   make != saab
+|   |   |   |   engine-type = dohc
+|   |   |   |   |   make = jaguar: 0 (2.0)
+|   |   |   |   |   make != jaguar
+|   |   |   |   |   |   num-of-doors = four: -1 (2.0)
+|   |   |   |   |   |   num-of-doors != four: 3 (1.0)
+|   |   |   |   engine-type != dohc
+|   |   |   |   |   engine-type = ohc
+|   |   |   |   |   |   wheel-base <= 101.2
+|   |   |   |   |   |   |   fuel-system = spdi: -1 (2.0/1.0)
+|   |   |   |   |   |   |   fuel-system != spdi
+|   |   |   |   |   |   |   |   fuel-system = 2bbl
+|   |   |   |   |   |   |   |   |   num-of-doors = four
+|   |   |   |   |   |   |   |   |   |   make = mitsubishi: 1 (1.0)
+|   |   |   |   |   |   |   |   |   |   make != mitsubishi: 0 (11.0/1.0)
+|   |   |   |   |   |   |   |   |   num-of-doors != four: 1 (4.0)
+|   |   |   |   |   |   |   |   fuel-system != 2bbl
+|   |   |   |   |   |   |   |   |   make = honda: 0 (4.0)
+|   |   |   |   |   |   |   |   |   make != honda
+|   |   |   |   |   |   |   |   |   |   length <= 177.3
+|   |   |   |   |   |   |   |   |   |   |   width <= 65.0: 0 (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   width > 65.0: 2 (13.0)
+|   |   |   |   |   |   |   |   |   |   length > 177.3: 0 (5.0)
+|   |   |   |   |   |   wheel-base > 101.2
+|   |   |   |   |   |   |   make = bmw: 0 (3.0)
+|   |   |   |   |   |   |   make != bmw
+|   |   |   |   |   |   |   |   body-style = hardtop: 0 (1.0)
+|   |   |   |   |   |   |   |   body-style != hardtop
+|   |   |   |   |   |   |   |   |   city-mpg <= 20.0: 1 (3.0)
+|   |   |   |   |   |   |   |   |   city-mpg > 20.0: -1 (8.0)
+|   |   |   |   |   engine-type != ohc: 0 (18.0)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	55
+
+
+Time taken to build model: 0.21 seconds
+Time taken to test model on training data: 0.05 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         189               92.1951 %
+Incorrectly Classified Instances        16                7.8049 %
+Kappa statistic                          0.8986
+Mean absolute error                      0.1267
+Root mean squared error                  0.2078
+Relative absolute error                 57.361  %
+Root relative squared error             62.635  %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 21  1  0  0  0 |  c = -1
+  0  0  1 64  1  0  1 |  d = 0
+  0  0  1  6 45  1  1 |  e = 1
+  0  0  0  1  1 30  0 |  f = 2
+  0  0  0  1  0  0 26 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         156               76.0976 %
+Incorrectly Classified Instances        49               23.9024 %
+Kappa statistic                          0.6894
+Mean absolute error                      0.1476
+Root mean squared error                  0.2519
+Relative absolute error                 66.7633 %
+Root relative squared error             75.8915 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 17  3  2  0  0 |  c = -1
+  0  0  3 56  3  1  4 |  d = 0
+  0  0  0  5 42  2  5 |  e = 1
+  0  0  0  3  8 15  6 |  f = 2
+  0  0  0  0  2  2 23 |  g = 3
+

@@ -1,0 +1,83 @@
+
+Options: -R -B -M 3 -N 2 -L -S -A 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (6.0/2.0)
+make != volvo
+|   num-of-doors = four
+|   |   make = volkswagen: 2 (4.0/1.0)
+|   |   make != volkswagen
+|   |   |   curb-weight <= 2050.0: 1 (9.0/2.0)
+|   |   |   curb-weight > 2050.0
+|   |   |   |   make = audi: 1 (3.0/1.0)
+|   |   |   |   make != audi: 0 (37.0/10.0)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0: 3 (17.0/5.0)
+|   |   city-mpg > 22.0
+|   |   |   compression-ratio <= 8.5: 3 (3.0/1.0)
+|   |   |   compression-ratio > 8.5
+|   |   |   |   fuel-system = 2bbl
+|   |   |   |   |   length <= 157.9: 2 (5.0/2.0)
+|   |   |   |   |   length > 157.9: 1 (9.0)
+|   |   |   |   fuel-system != 2bbl
+|   |   |   |   |   peak-rpm <= 5900.0: 2 (7.0/1.0)
+|   |   |   |   |   peak-rpm > 5900.0: 1 (3.0/1.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+
+Time taken to build model: 0.17 seconds
+Time taken to test model on training data: 0.08 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         145               70.7317 %
+Incorrectly Classified Instances        60               29.2683 %
+Kappa statistic                          0.6182
+Mean absolute error                      0.1649
+Root mean squared error                  0.2671
+Relative absolute error                 74.6505 %
+Root relative squared error             80.5062 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0  8 14  0  0  0 |  c = -1
+  0  0  0 53  4  5  5 |  d = 0
+  0  0  0  6 33  7  8 |  e = 1
+  0  0  0  3  4 24  1 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         121               59.0244 %
+Incorrectly Classified Instances        84               40.9756 %
+Kappa statistic                          0.4613
+Mean absolute error                      0.1807
+Root mean squared error                  0.2894
+Relative absolute error                 81.7484 %
+Root relative squared error             87.2098 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  2 11  6  2  0  1 |  c = -1
+  0  0  2 51  4  6  4 |  d = 0
+  0  0  1 10 32  4  7 |  e = 1
+  0  0  0 12  8  8  4 |  f = 2
+  0  0  0  3  1  4 19 |  g = 3
+

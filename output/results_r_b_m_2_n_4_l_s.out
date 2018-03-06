@@ -1,0 +1,109 @@
+
+Options: -R -B -M 2 -N 4 -L -S 
+
+J48 pruned tree
+------------------
+
+make = volvo
+|   normalized-losses <= 98.0: -1 (6.0)
+|   normalized-losses > 98.0: -2 (2.0)
+make != volvo
+|   height <= 50.2: 3 (15.0/2.0)
+|   height > 50.2
+|   |   wheel-base <= 95.1
+|   |   |   make = porsche: 3 (2.0)
+|   |   |   make != porsche
+|   |   |   |   make = volkswagen: 3 (2.0)
+|   |   |   |   make != volkswagen
+|   |   |   |   |   make = subaru: 2 (2.0)
+|   |   |   |   |   make != subaru
+|   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   make = mitsubishi: 2 (4.0/1.0)
+|   |   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   |   width <= 63.6: 0 (4.0/2.0)
+|   |   |   |   |   |   |   |   width > 63.6: 1 (26.0)
+|   |   wheel-base > 95.1
+|   |   |   make = saab
+|   |   |   |   normalized-losses <= 125.0: 2 (2.0)
+|   |   |   |   normalized-losses > 125.0: 3 (3.0)
+|   |   |   make != saab
+|   |   |   |   engine-type = dohc: -1 (5.0/3.0)
+|   |   |   |   engine-type != dohc
+|   |   |   |   |   make = mitsubishi: 1 (3.0/1.0)
+|   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   engine-type = ohc
+|   |   |   |   |   |   |   wheel-base <= 101.2
+|   |   |   |   |   |   |   |   fuel-system = 2bbl
+|   |   |   |   |   |   |   |   |   num-of-doors = four: 0 (11.0/1.0)
+|   |   |   |   |   |   |   |   |   num-of-doors != four: 1 (4.0)
+|   |   |   |   |   |   |   |   fuel-system != 2bbl
+|   |   |   |   |   |   |   |   |   make = honda: 0 (4.0)
+|   |   |   |   |   |   |   |   |   make != honda
+|   |   |   |   |   |   |   |   |   |   length <= 177.3
+|   |   |   |   |   |   |   |   |   |   |   width <= 65.0: 0 (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   width > 65.0: 2 (13.0)
+|   |   |   |   |   |   |   |   |   |   length > 177.3: 0 (5.0)
+|   |   |   |   |   |   |   wheel-base > 101.2
+|   |   |   |   |   |   |   |   make = bmw: 0 (3.0)
+|   |   |   |   |   |   |   |   make != bmw
+|   |   |   |   |   |   |   |   |   city-mpg <= 20.0: 1 (3.0)
+|   |   |   |   |   |   |   |   |   city-mpg > 20.0: -1 (9.0/1.0)
+|   |   |   |   |   |   engine-type != ohc: 0 (18.0)
+
+Number of Leaves  : 	24
+
+Size of the tree : 	47
+
+
+Time taken to build model: 0.13 seconds
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         184               89.7561 %
+Incorrectly Classified Instances        21               10.2439 %
+Kappa statistic                          0.8672
+Mean absolute error                      0.0383
+Root mean squared error                  0.1547
+Relative absolute error                 17.3154 %
+Root relative squared error             46.6359 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  3  0  0  0  0  0 |  b = -2
+  0  0 20  1  1  0  0 |  c = -1
+  0  0  4 61  1  0  1 |  d = 0
+  0  0  0  6 46  1  1 |  e = 1
+  0  0  0  1  1 30  0 |  f = 2
+  0  0  2  1  0  0 24 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         152               74.1463 %
+Incorrectly Classified Instances        53               25.8537 %
+Kappa statistic                          0.6629
+Mean absolute error                      0.0935
+Root mean squared error                  0.2399
+Relative absolute error                 42.2906 %
+Root relative squared error             72.2739 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 18  3  1  0  0 |  c = -1
+  0  0  2 56  2  2  5 |  d = 0
+  0  0  1  4 42  2  5 |  e = 1
+  0  0  0  4 10 14  4 |  f = 2
+  0  0  0  1  3  1 22 |  g = 3
+

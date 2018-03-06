@@ -1,0 +1,79 @@
+
+Options: -R -B -M 6 -N 5 -L -S 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (8.0/2.0)
+make != volvo
+|   num-of-doors = four
+|   |   height <= 51.6: 1 (6.53)
+|   |   height > 51.6
+|   |   |   curb-weight <= 2050.0: 1 (9.0/3.0)
+|   |   |   curb-weight > 2050.0
+|   |   |   |   num-of-cylinders = five: -1 (7.0/4.0)
+|   |   |   |   num-of-cylinders != five
+|   |   |   |   |   make = volkswagen: 2 (6.0/2.0)
+|   |   |   |   |   make != volkswagen: 0 (53.53/12.0)
+|   num-of-doors != four
+|   |   city-mpg <= 22.0: 3 (28.0/9.0)
+|   |   city-mpg > 22.0
+|   |   |   bore <= 3.39: 1 (35.95/11.47)
+|   |   |   bore > 3.39: 2 (10.0)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	17
+
+
+Time taken to build model: 0.19 seconds
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         149               72.6829 %
+Incorrectly Classified Instances        56               27.3171 %
+Kappa statistic                          0.6414
+Mean absolute error                      0.1155
+Root mean squared error                  0.2432
+Relative absolute error                 52.2695 %
+Root relative squared error             73.3032 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 11 10  1  0  0 |  c = -1
+  0  0  1 53  6  2  5 |  d = 0
+  0  0  3  1 45  0  5 |  e = 1
+  0  0  1  4  9 17  1 |  f = 2
+  0  0  0  0  4  0 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         127               61.9512 %
+Incorrectly Classified Instances        78               38.0488 %
+Kappa statistic                          0.4953
+Mean absolute error                      0.1414
+Root mean squared error                  0.28  
+Relative absolute error                 63.947  %
+Root relative squared error             84.3762 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 12  9  1  0  0 |  c = -1
+  0  0  2 54  4  2  5 |  d = 0
+  0  0  0 10 36  1  7 |  e = 1
+  0  0  0  6 14  7  5 |  f = 2
+  0  0  0  0  7  2 18 |  g = 3
+

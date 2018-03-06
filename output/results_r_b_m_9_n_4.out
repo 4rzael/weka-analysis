@@ -1,0 +1,77 @@
+
+Options: -R -B -M 9 -N 4 
+
+J48 pruned tree
+------------------
+
+num-of-doors = four
+|   width <= 64.2
+|   |   curb-weight <= 1989.0: 1 (9.0/2.0)
+|   |   curb-weight > 1989.0: 0 (9.0/4.0)
+|   width > 64.2
+|   |   wheel-base <= 101.2: 0 (33.56/11.0)
+|   |   wheel-base > 101.2
+|   |   |   make = peugot: 0 (9.0)
+|   |   |   make != peugot: -1 (25.0/9.0)
+num-of-doors != four
+|   city-mpg <= 22.0: 3 (24.0/7.0)
+|   city-mpg > 22.0
+|   |   bore <= 3.39: 1 (35.44/13.44)
+|   |   bore > 3.39: 2 (9.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+
+Time taken to build model: 0.13 seconds
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         145               70.7317 %
+Incorrectly Classified Instances        60               29.2683 %
+Kappa statistic                          0.6199
+Mean absolute error                      0.1268
+Root mean squared error                  0.2514
+Relative absolute error                 57.3867 %
+Root relative squared error             75.7877 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 21  1  0  0  0 |  c = -1
+  0  0  7 51  4  0  5 |  d = 0
+  0  0  4  7 38  0  5 |  e = 1
+  0  0  0 10  9 12  1 |  f = 2
+  0  0  0  0  4  0 23 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         128               62.439  %
+Incorrectly Classified Instances        77               37.561  %
+Kappa statistic                          0.5077
+Mean absolute error                      0.1392
+Root mean squared error                  0.2769
+Relative absolute error                 62.9655 %
+Root relative squared error             83.4235 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  1  2  0  0  0 |  b = -2
+  0  0 17  4  1  0  0 |  c = -1
+  0  0  6 50  4  2  5 |  d = 0
+  0  0  4  9 34  2  5 |  e = 1
+  0  0  1 10 12  7  2 |  f = 2
+  0  0  0  1  3  3 20 |  g = 3
+

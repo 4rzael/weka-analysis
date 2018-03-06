@@ -1,0 +1,107 @@
+
+Options: -R -B -M 1 -N 9 -S 
+
+J48 pruned tree
+------------------
+
+make = volvo: -1 (10.0/3.0)
+make != volvo
+|   height <= 50.2: 3 (17.0/2.0)
+|   height > 50.2
+|   |   num-of-doors = four
+|   |   |   height <= 51.6: 1 (9.6/1.0)
+|   |   |   height > 51.6
+|   |   |   |   wheel-base <= 101.2
+|   |   |   |   |   curb-weight <= 2050.0: 1 (10.0/4.0)
+|   |   |   |   |   curb-weight > 2050.0
+|   |   |   |   |   |   make = audi: 2 (2.0)
+|   |   |   |   |   |   make != audi
+|   |   |   |   |   |   |   make = saab: 2 (2.0)
+|   |   |   |   |   |   |   make != saab: 0 (38.6/5.0)
+|   |   |   |   wheel-base > 101.2
+|   |   |   |   |   make = audi: 1 (3.0)
+|   |   |   |   |   make != audi
+|   |   |   |   |   |   make = bmw: 0 (2.0/1.0)
+|   |   |   |   |   |   make != bmw
+|   |   |   |   |   |   |   make = peugot: 0 (10.0)
+|   |   |   |   |   |   |   make != peugot: -1 (17.0/5.0)
+|   |   num-of-doors != four
+|   |   |   length <= 177.8
+|   |   |   |   engine-location = front
+|   |   |   |   |   make = volkswagen
+|   |   |   |   |   |   body-style = sedan: 2 (1.0)
+|   |   |   |   |   |   body-style != sedan: 3 (1.0)
+|   |   |   |   |   make != volkswagen
+|   |   |   |   |   |   bore <= 3.39
+|   |   |   |   |   |   |   make = bmw: 0 (1.0)
+|   |   |   |   |   |   |   make != bmw
+|   |   |   |   |   |   |   |   make = audi: 2 (1.0)
+|   |   |   |   |   |   |   |   make != audi
+|   |   |   |   |   |   |   |   |   wheel-base <= 89.5: 2 (3.0)
+|   |   |   |   |   |   |   |   |   wheel-base > 89.5
+|   |   |   |   |   |   |   |   |   |   make = mitsubishi: 2 (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   make != mitsubishi
+|   |   |   |   |   |   |   |   |   |   |   fuel-system = 1bbl
+|   |   |   |   |   |   |   |   |   |   |   |   normalized-losses <= 103.0: 1 (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   normalized-losses > 103.0: 0 (1.0)
+|   |   |   |   |   |   |   |   |   |   |   fuel-system != 1bbl: 1 (22.79/0.4)
+|   |   |   |   |   |   bore > 3.39: 2 (13.0/1.0)
+|   |   |   |   engine-location != front: 3 (2.0)
+|   |   |   length > 177.8: 3 (10.0/4.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	45
+
+
+Time taken to build model: 0.25 seconds
+Time taken to test model on training data: 0.07 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         176               85.8537 %
+Incorrectly Classified Instances        29               14.1463 %
+Kappa statistic                          0.8178
+Mean absolute error                      0.0628
+Root mean squared error                  0.177 
+Relative absolute error                 28.4398 %
+Root relative squared error             53.3457 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 21  0  1  0  0 |  c = -1
+  0  0  5 54  4  0  4 |  d = 0
+  0  0  0  1 48  2  3 |  e = 1
+  0  0  0  5  1 26  0 |  f = 2
+  0  0  0  0  0  0 27 |  g = 3
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         136               66.3415 %
+Incorrectly Classified Instances        69               33.6585 %
+Kappa statistic                          0.5563
+Mean absolute error                      0.1141
+Root mean squared error                  0.2702
+Relative absolute error                 51.6285 %
+Root relative squared error             81.3955 %
+Total Number of Instances              205     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g   <-- classified as
+  0  0  0  0  0  0  0 |  a = -3
+  0  0  3  0  0  0  0 |  b = -2
+  0  0 13  7  2  0  0 |  c = -1
+  0  0  3 54  6  0  4 |  d = 0
+  0  0  1  9 35  4  5 |  e = 1
+  0  0  0  5  7 17  3 |  f = 2
+  0  0  0  2  6  2 17 |  g = 3
+
